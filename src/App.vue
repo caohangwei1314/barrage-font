@@ -1,17 +1,19 @@
 <template>
   <div>
     <top-container></top-container>
+    <banner-container></banner-container>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 import topContainer from '@/components/common/TopContainer'
-
+import bannerContainer from '@/components/common/BannerContainer'
 export default {
   name: 'App',
   components: {
-    topContainer
+    topContainer,
+    bannerContainer
   }
 }
 </script>

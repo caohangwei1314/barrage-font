@@ -63,7 +63,7 @@ export default {
   width: 100%;
   height: 46px;
   .wp {
-    margin: 10px auto;
+    margin: 12px auto 0;
     width: 980px;
     height: 100%;
     .logo {
