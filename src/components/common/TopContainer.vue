@@ -1,6 +1,6 @@
 <template>
   <div class="top-nav">
-    <div class="wp">
+    <div class="wp header">
       <div class="logo fl">
         <img :src="logo"
              width="88px"
@@ -62,10 +62,8 @@ export default {
 .top-nav {
   width: 100%;
   height: 46px;
-  .wp {
-    margin: 12px auto 0;
-    width: 980px;
-    height: 100%;
+  .header {
+    margin-top: 12px;
     .logo {
       width: 88px;
       height: 100%;
@@ -112,7 +110,6 @@ export default {
     }
     .guide {
       flex: 3 1 200px;
-      list-style: none;
       li {
         float: left;
         margin: 5px 10px 0 10px;
