@@ -1,23 +1,26 @@
 <template>
   <div>
-    <top-container></top-container>
-    <banner-container></banner-container>
-    <nav-container></nav-container>
-    <router-view></router-view>
+    <top-container />
+    <!-- <banner-container />
+    <nav-container /> -->
+    <router-view />
+    <foot-container />
   </div>
 </template>
 
 <script>
 import topContainer from '@/components/common/TopContainer'
-import bannerContainer from '@/components/common/BannerContainer'
-import navContainer from '@/components/common/NavContainer'
+// import bannerContainer from '@/components/common/BannerContainer'
+// import navContainer from '@/components/common/NavContainer'
+import footContainer from '@/components/common/FootContainer'
 export default {
-  name: 'App',
-  components: {
-    topContainer,
-    bannerContainer,
-    navContainer
-  }
+    name: 'App',
+    components: {
+        topContainer,
+        // bannerContainer,
+        // navContainer,
+        footContainer
+    }
 }
 </script>
 
@@ -43,5 +46,8 @@ a {
 }
 li {
   list-style: none;
+}
+.clearfixs{
+  overflow:hidden
 }
 </style>

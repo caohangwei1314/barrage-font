@@ -1,18 +1,20 @@
 <template>
   <div>
-    <a href="#"
-       :style="{backgroundImage:`url(${banner})`}"
-       class="banner-pic"></a>
+    <a
+      href="#"
+      :style="{backgroundImage:`url(${banner})`}"
+      class="banner-pic"
+    />
   </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      banner: require('assets/top/banner.jpg')
+    data () {
+        return {
+            banner: require('assets/top/banner.jpg')
+        }
     }
-  }
 }
 </script>
 

@@ -2,12 +2,16 @@
   <div class="nav">
     <div class="top-nav">
       <ul class="first-container wp">
-        <li v-for="(item,index) in items"
-            :key="item.name">
-          <a href="#"
-             v-on:click="changeOn(index)"
-             :class="{on:item.checked}"
-             class="first-link">{{item.name}}</a></li>
+        <li
+          v-for="(item,index) in items"
+          :key="item.name"
+        >
+          <a
+            href="#"
+            :class="{on:item.checked}"
+            class="first-link"
+            @click="changeOn(index)"
+          >{{ item.name }}</a></li>
       </ul>
     </div>
   </div>
@@ -15,48 +19,48 @@
 
 <script>
 export default {
-  data () {
-    return {
-      items: [
-        {
-          name: '全部',
-          checked: false
-        },
-        {
-          name: '连载动画',
-          checked: false
-        },
-        {
-          name: '完结动画',
-          checked: false
-        },
-        {
-          name: '资讯',
-          checked: false
-        },
-        {
-          name: '官方延伸',
-          checked: false
-        },
-        {
-          name: '新番时间表',
-          checked: false
-        },
-        {
-          name: '番剧索引',
-          checked: false
+    data () {
+        return {
+            items: [
+                {
+                    name: '全部',
+                    checked: false
+                },
+                {
+                    name: '连载动画',
+                    checked: false
+                },
+                {
+                    name: '完结动画',
+                    checked: false
+                },
+                {
+                    name: '资讯',
+                    checked: false
+                },
+                {
+                    name: '官方延伸',
+                    checked: false
+                },
+                {
+                    name: '新番时间表',
+                    checked: false
+                },
+                {
+                    name: '番剧索引',
+                    checked: false
+                }
+            ]
         }
-      ]
+    },
+    methods: {
+        changeOn (index) {
+            for (let i = 0; i < this.items.length; i++) {
+                this.items[i].checked = false
+            }
+            this.items[index].checked = true
+        }
     }
-  },
-  methods: {
-    changeOn (index) {
-      for (let i = 0; i < this.items.length; i++) {
-        this.items[i].checked = false;
-      }
-      this.items[index].checked = true;
-    }
-  }
 }
 </script>
 

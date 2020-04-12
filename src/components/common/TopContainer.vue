@@ -2,41 +2,59 @@
   <div class="top-nav">
     <div class="wp header">
       <div class="logo fl">
-        <img :src="logo"
-             width="88px"
-             height="27px" />
+        <img
+          :src="logo"
+          width="88px"
+          height="27px"
+        >
       </div>
       <ul class="guide fr">
         <li class="guide-item"><a href="#">
-            <span class="icon"
-                  :style="{backgroundImage:`url(${userCenter})`}"></span></a></li>
+          <span
+            class="icon"
+            :style="{backgroundImage:`url(${userCenter})`}"
+          /></a></li>
         <li class="guide-item"><a href="#">
-            <span class="icon"
-                  :style="{backgroundImage:`url(${message})`}"></span></a></li>
+          <span
+            class="icon"
+            :style="{backgroundImage:`url(${message})`}"
+          /></a></li>
         <li class="guide-item"><a href="#">
-            <span class="icon"
-                  :style="{backgroundImage:`url(${history})`}"></span></a></li>
+          <span
+            class="icon"
+            :style="{backgroundImage:`url(${history})`}"
+          /></a></li>
         <li class="guide-item"><a href="#">
-            <span class="icon"
-                  :style="{backgroundImage:`url(${iconUpload})`}"></span></a></li>
+          <span
+            class="icon"
+            :style="{backgroundImage:`url(${iconUpload})`}"
+          /></a></li>
         <li class="guide-item">
           <a href="#">
-            <span class="icon"
-                  :style="{backgroundImage:`url(${iconCollections})`}"></span>
+            <span
+              class="icon"
+              :style="{backgroundImage:`url(${iconCollections})`}"
+            />
           </a>
         </li>
       </ul>
       <div class="search fr">
-        <input type="text"
-               placeholder="寻国风 歌舞投稿大赛"
-               data-url="https://www.acfun.cn/spn/lookingforGF"
-               value=""
-               autocomplete="off"
-               id="search-text">
-        <button id="search-btn"
-                class="search-btn">
-          <i class="icon"
-             :style="{backgroundImage:`url(${search})`}"></i></button>
+        <input
+          id="search-text"
+          type="text"
+          placeholder="寻国风 歌舞投稿大赛"
+          data-url="https://www.acfun.cn/spn/lookingforGF"
+          value=""
+          autocomplete="off"
+        >
+        <button
+          id="search-btn"
+          class="search-btn"
+        >
+          <i
+            class="icon"
+            :style="{backgroundImage:`url(${search})`}"
+          /></button>
       </div>
     </div>
   </div>
@@ -44,17 +62,17 @@
 
 <script>
 export default {
-  data () {
-    return {
-      logo: require('assets/top/logo.jpg'),
-      iconCollections: require('assets/top/collection.png'),
-      iconUpload: require('assets/top/upload.png'),
-      history: require('assets/top/history.png'),
-      message: require('assets/top/message.png'),
-      userCenter: require('assets/top/userCenter.png'),
-      search: require('assets/top/search.png'),
+    data () {
+        return {
+            logo: require('assets/top/logo.jpg'),
+            iconCollections: require('assets/top/collection.png'),
+            iconUpload: require('assets/top/upload.png'),
+            history: require('assets/top/history.png'),
+            message: require('assets/top/message.png'),
+            userCenter: require('assets/top/userCenter.png'),
+            search: require('assets/top/search.png')
+        }
     }
-  }
 }
 </script>
 

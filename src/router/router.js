@@ -4,12 +4,17 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 export default new VueRouter({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: () => import('@/views/index')
-    }
-  ]
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: () => import('@/views/index')
+        },
+        {
+            path: '/play',
+            name: 'home',
+            component: () => import('@/views/play/index')
+        }
+    ]
 })
