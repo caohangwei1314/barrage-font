@@ -15,6 +15,11 @@ export default new VueRouter({
             path: '/play',
             name: 'home',
             component: () => import('@/views/play/index')
+        },
+        {
+            path: '/timeline',
+            name: 'timeline',
+            component: () => import('@/views/timeline/index')
         }
     ]
 })

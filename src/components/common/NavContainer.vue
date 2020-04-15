@@ -59,6 +59,9 @@ export default {
                 this.items[i].checked = false
             }
             this.items[index].checked = true
+            if (index === 5) {
+                this.$router.push({ name: 'timeline' })
+            }
         }
     }
 }
