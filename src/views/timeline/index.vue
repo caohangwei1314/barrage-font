@@ -35,23 +35,23 @@
             </div>
             <div class="timeline-wrapper clearfix">
                 <div class="tl-body-list clearfix">
-                    <div class="season-timeline">
-                        <div class="season-group is-published">
+                    <div class="season-timeline" v-for="item in items" :key="item.date">
+                        <div class="season-group is-published" v-for="itemSon in item.data" :key="itemSon.time">
                             <div class="group-time">
-                                00:00
+                                {{itemSon.time}}
                             </div>
                             <ul class="season-list">
-                                <li class="season-item">
-                                    <a href="//www.bilibili.com/bangumi/play/ss32982" target="_blank" title="辉夜大小姐想让我告白？～天才们的恋爱头脑战～">
+                                <li class="season-item" v-for="itemGrandSon in itemSon.data" :key="itemGrandSon.id">
+                                    <a href="//www.bilibili.com/bangumi/play/ss32982" target="_blank" :title="itemGrandSon.title">
                                         <img src="../../assets/comic/suoluetu/093fb58647f38be27f2c0f145e9ed1debc5cb1d3.jpg">
                                     </a>
                                     <div class="season-body">
-                                        <a href="//www.bilibili.com/bangumi/play/ss32982" target="_blank" title="辉夜大小姐想让我告白？～天才们的恋爱头脑战～">
-                                            <div title="辉夜大小姐想让我告白？～天才们的恋爱头脑战～" class="season-title">
-                                                <span class="follow"></span>辉夜大小姐想让我告白？～天才们的恋爱头脑战～
+                                        <a href="//www.bilibili.com/bangumi/play/ss32982" target="_blank" :title="itemGrandSon.title">
+                                            <div :title="itemGrandSon.title" class="season-title">
+                                                <span class="follow" v-if="itemGrandSon.isFollow"></span>{{itemGrandSon.title}}
                                             </div>
                                         </a>
-                                        <a href="//www.bilibili.com/bangumi/play/ep317925" target="_blank"><div class="season-desc published">第1话</div></a>
+                                        <a href="//www.bilibili.com/bangumi/play/ep317925" target="_blank"><div class="season-desc published">第{{item.series}}话</div></a>
                                     </div>
                                 </li>
                             </ul>
@@ -64,7 +64,85 @@
 </template>
 <script>
 export default {
-
+    data () {
+        return {
+            items: [
+                {
+                    date: '4-7',
+                    work: '周二',
+                    data: [
+                        {
+                            time: '00:00',
+                            data: [
+                                {
+                                    id: '1',
+                                    title: '辉夜大小姐想让我告白？～天才们的恋爱头脑战～',
+                                    series: '1',
+                                    isFollow: true
+                                },
+                                {
+                                    id: '2',
+                                    title: '辉夜大小姐想让我告白？～天才们的恋爱头脑战～',
+                                    series: '1',
+                                    isFollow: true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    date: '4-8',
+                    work: '周三',
+                    data: [
+                        {
+                            time: '00:00',
+                            data: [
+                                {
+                                    id: '1',
+                                    title: '辉夜大小姐想让我告白？～天才们的恋爱头脑战～',
+                                    series: '1',
+                                    time: '00:00',
+                                    isFollow: true
+                                },
+                                {
+                                    id: '2',
+                                    title: '辉夜大小姐想让我告白？～天才们的恋爱头脑战～',
+                                    series: '1',
+                                    time: '00:00',
+                                    isFollow: true
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    date: '4-9',
+                    work: '周四',
+                    data: [
+                        {
+                            time: '00:00',
+                            data: [
+                                {
+                                    id: '1',
+                                    title: '辉夜大小姐想让我告白？～天才们的恋爱头脑战～',
+                                    series: '1',
+                                    time: '00:00',
+                                    isFollow: true
+                                },
+                                {
+                                    id: '2',
+                                    title: '辉夜大小姐想让我告白？～天才们的恋爱头脑战～',
+                                    series: '1',
+                                    time: '00:00',
+                                    isFollow: true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
 }
 </script>
 <style lang="scss">
@@ -72,15 +150,21 @@ export default {
     position: relative;
     padding-top: 66px;
     padding-bottom: 20px;
-    width: 980px;
+    width: 1163px;
     .timeline-wrapper {
-        width: 980px;
+        width: 1163px;
         .tl-body-list {
             -webkit-transition: all .6s ease;
             -o-transition: all .6s ease;
             transition: all .6s ease;
             .season-timeline {
-                width: 328px;
+                width: 378px;
+                float: left;
+                // -webkit-animation: appear-from-left 1s linear;
+                // animation: appear-from-left 1s linear;
+                // -webkit-animation-fill-mode: both;
+                // animation-fill-mode: both;
+                // width: 280px;
                 .season-group {
                     position: relative;
                     left: 46px;
@@ -195,6 +279,15 @@ export default {
         -webkit-transition: height .3s;
         -o-transition: height .3s;
         transition: height .3s;
+        .tl-weeks:after {
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            border-bottom: 1px solid #e7e7e7;
+            content: "";
+            z-index: -1;
+        }
         .tl-weeks {
             position: relative;
             height: 66px;
@@ -208,7 +301,7 @@ export default {
                 transition: all .75s ease;
                 .tl-head {
                     position: relative;
-                    width: 280px;
+                    width: 386px;
                     height: 66px;
                     float: left;
                     -webkit-animation: appear-from-left 1s linear;
