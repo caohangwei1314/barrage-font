@@ -1,60 +1,64 @@
 <template>
-    <div class="wp clearfixs">
-        <div class="timeline-container">
-            <div class="timeline-header">
-                <div class="arrow-left"></div>
-                <div class="tl-weeks">
-                    <ul class="tl-head-list">
-                        <div class="tl-head">
-                            <div class="tl-day">
-                                <span class="indicator"></span>
-                                <div class="day-of-week week-2"></div>
-                                <span class="t-date">4-7</span>
-                                <span class="t-week">周二</span>
+    <div>
+        <banner-container />
+        <nav-container />
+        <div class="wp clearfixs">
+            <div class="timeline-container">
+                <div class="timeline-header">
+                    <div class="arrow-left"></div>
+                    <div class="tl-weeks">
+                        <ul class="tl-head-list">
+                            <div class="tl-head">
+                                <div class="tl-day">
+                                    <span class="indicator"></span>
+                                    <div class="day-of-week week-2"></div>
+                                    <span class="t-date">4-7</span>
+                                    <span class="t-week">周二</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="tl-head">
-                            <div class="tl-day">
-                                <span class="indicator"></span>
-                                <div class="day-of-week week-2"></div>
-                                <span class="t-date">4-7</span>
-                                <span class="t-week">周二</span>
+                            <div class="tl-head">
+                                <div class="tl-day">
+                                    <span class="indicator"></span>
+                                    <div class="day-of-week week-2"></div>
+                                    <span class="t-date">4-7</span>
+                                    <span class="t-week">周二</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="tl-head">
-                            <div class="tl-day">
-                                <span class="indicator"></span>
-                                <div class="day-of-week week-2"></div>
-                                <span class="t-date">4-7</span>
-                                <span class="t-week">周二</span>
+                            <div class="tl-head">
+                                <div class="tl-day">
+                                    <span class="indicator"></span>
+                                    <div class="day-of-week week-2"></div>
+                                    <span class="t-date">4-7</span>
+                                    <span class="t-week">周二</span>
+                                </div>
                             </div>
-                        </div>
-                    </ul>
+                        </ul>
+                    </div>
+                    <div class="arrow-right"></div>
                 </div>
-                <div class="arrow-right"></div>
-            </div>
-            <div class="timeline-wrapper clearfix">
-                <div class="tl-body-list clearfix">
-                    <div class="season-timeline" v-for="item in items" :key="item.date">
-                        <div class="season-group is-published" v-for="itemSon in item.data" :key="itemSon.time">
-                            <div class="group-time">
-                                {{itemSon.time}}
-                            </div>
-                            <ul class="season-list">
-                                <li class="season-item" v-for="itemGrandSon in itemSon.data" :key="itemGrandSon.id">
-                                    <a href="//www.bilibili.com/bangumi/play/ss32982" target="_blank" :title="itemGrandSon.title">
-                                        <img src="../../assets/comic/suoluetu/093fb58647f38be27f2c0f145e9ed1debc5cb1d3.jpg">
-                                    </a>
-                                    <div class="season-body">
+                <div class="timeline-wrapper clearfix">
+                    <div class="tl-body-list clearfix">
+                        <div class="season-timeline" v-for="item in items" :key="item.date">
+                            <div class="season-group is-published" v-for="itemSon in item.data" :key="itemSon.time">
+                                <div class="group-time">
+                                    {{itemSon.time}}
+                                </div>
+                                <ul class="season-list">
+                                    <li class="season-item" v-for="itemGrandSon in itemSon.data" :key="itemGrandSon.id">
                                         <a href="//www.bilibili.com/bangumi/play/ss32982" target="_blank" :title="itemGrandSon.title">
-                                            <div :title="itemGrandSon.title" class="season-title">
-                                                <span class="follow" v-if="itemGrandSon.isFollow"></span>{{itemGrandSon.title}}
-                                            </div>
+                                            <img src="../../assets/comic/suoluetu/093fb58647f38be27f2c0f145e9ed1debc5cb1d3.jpg">
                                         </a>
-                                        <a href="//www.bilibili.com/bangumi/play/ep317925" target="_blank"><div class="season-desc published">第{{item.series}}话</div></a>
-                                    </div>
-                                </li>
-                            </ul>
+                                        <div class="season-body">
+                                            <a href="//www.bilibili.com/bangumi/play/ss32982" target="_blank" :title="itemGrandSon.title">
+                                                <div :title="itemGrandSon.title" class="season-title">
+                                                    <span class="follow" v-if="itemGrandSon.isFollow"></span>{{itemGrandSon.title}}
+                                                </div>
+                                            </a>
+                                            <a href="//www.bilibili.com/bangumi/play/ep317925" target="_blank"><div class="season-desc published">第{{item.series}}话</div></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,7 +67,13 @@
     </div>
 </template>
 <script>
+import bannerContainer from '@/components/common/BannerContainer'
+import navContainer from '@/components/common/NavContainer'
 export default {
+    components: {
+        bannerContainer,
+        navContainer
+    },
     data () {
         return {
             items: [

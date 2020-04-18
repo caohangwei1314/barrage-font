@@ -2,14 +2,16 @@
   <div class="top-nav">
     <div class="wp header">
       <div class="logo fl">
-        <img
-          :src="logo"
-          width="88px"
-          height="27px"
-        >
+        <a href="/">
+          <img
+            :src="logo"
+            width="88px"
+            height="27px"
+          >
+        </a>
       </div>
       <ul class="guide fr">
-        <li class="guide-item"><a href="#">
+        <li class="guide-item"><a href="/account">
           <span
             class="icon"
             :style="{backgroundImage:`url(${userCenter})`}"

@@ -20,6 +20,16 @@ export default new VueRouter({
             path: '/timeline',
             name: 'timeline',
             component: () => import('@/views/timeline/index')
+        },
+        {
+            path: '/articles',
+            name: 'articles',
+            component: () => import('@/views/articles/index')
+        },
+        {
+            path: '/account',
+            name: 'account',
+            component: () => import('@/views/account/index')
         }
     ]
 })

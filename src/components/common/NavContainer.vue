@@ -59,8 +59,18 @@ export default {
                 this.items[i].checked = false
             }
             this.items[index].checked = true
-            if (index === 5) {
+            switch (index) {
+            case 0:
+                this.$router.push({ name: 'home' })
+                break
+            case 3:
+                this.$router.push({ name: 'articles' })
+                break
+            case 5:
                 this.$router.push({ name: 'timeline' })
+                break
+            default:
+                break
             }
         }
     }
