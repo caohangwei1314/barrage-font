@@ -21,7 +21,7 @@
             class="icon"
             :style="{backgroundImage:`url(${message})`}"
           /></a></li>
-        <li class="guide-item"><a href="#">
+        <li class="guide-item"><a href="/history">
           <span
             class="icon"
             :style="{backgroundImage:`url(${history})`}"

@@ -30,6 +30,21 @@ export default new VueRouter({
             path: '/account',
             name: 'account',
             component: () => import('@/views/account/index')
+        },
+        {
+            path: '/index',
+            name: 'index',
+            component: () => import('@/views/index/index')
+        },
+        {
+            path: '/anime',
+            name: 'anime',
+            component: () => import('@/views/anime/index')
+        },
+        {
+            path: '/history',
+            name: 'history',
+            component: () => import('@/views/history/index')
         }
     ]
 })

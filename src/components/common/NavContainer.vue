@@ -69,6 +69,9 @@ export default {
             case 5:
                 this.$router.push({ name: 'timeline' })
                 break
+            case 6:
+                this.$router.push({ name: 'index' })
+                break
             default:
                 break
             }
