@@ -11,12 +11,24 @@
                     <li class="sort-item"><i class="up"></i><span>播放数量</span><i class="down active"></i></li><li class="sort-item"><i class="up"></i><span>开播时间</span><i class="down active"></i></li>
                 </ul>
                 <ul class="bangumi-list clearfix">
-                    <li v-for="item in 20" :key="item" class="bangumi-item" style=""><a href="/anime" target="_blank" class="cover-wrapper"><div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/9d9cd5a6a48428fe2e4b6ed17025707696eab47b.png@320w_428h.webp" lazy="loaded"></div> <div class="shadow">786.9万追番</div> <span class="corner-tag badge_0">会员专享</span></a> <a href="//www.bilibili.com/bangumi/play/ss26801/" target="_blank" class="bangumi-title">鬼灭之刃</a> <p class="pub-info">全26话</p></li>
+                    <li v-for="item in items" :key="item.id" class="bangumi-item" style="">
+                        <a :href="'/anime?id=' + item.id" target="_blank" class="cover-wrapper">
+                            <div class="common-lazy-img">
+                                <img alt="" :src="'https://barrage-web.oss-cn-hangzhou.aliyuncs.com/' + item.image">
+                            </div>
+                            <div class="shadow">{{item.totalFollow}}追番</div>
+                            <span v-if="item.isVip" class="corner-tag badge_0">会员专享</span>
+                        </a>
+                        <a href="//www.bilibili.com/bangumi/play/ss26801/" target="_blank" class="bangumi-title">{{item.name}}</a>
+                        <p class="pub-info">全{{item.count}}话</p>
+                    </li>
                 </ul>
                 <el-pagination
                     background
                     layout="prev, pager, next"
-                    :total="1000">
+                    :total="page.total"
+                    :page-size="page.size"
+                    :current-page="page.limit">
                 </el-pagination>
             </div>
         </div>
@@ -24,9 +36,46 @@
 </template>
 
 <script>
+import * as anime from '@/api/anime.js'
 import bannerContainer from '@/components/common/BannerContainer'
 import navContainer from '@/components/common/NavContainer'
 export default {
+    data () {
+        return {
+            page: {
+                total: 20,
+                size: 20,
+                limit: 1,
+                orderColumn: 'total_follow',
+                orderDesc: 'desc'
+            },
+            items: [
+                {
+                    id: 1,
+                    name: '欢迎来到实力至上主义的教室',
+                    image: 'a79e331b7443ed5df5a2acd345dc41d598d46ff9.jpg',
+                    count: 0,
+                    totalFollow: 0,
+                    isVip: true
+                }
+            ]
+        }
+    },
+    created () {
+        this.init()
+    },
+    methods: {
+        init () {
+            anime.page(this.page.limit, this.page.size, this.page.orderColumn, this.page.orderDesc).then(result => {
+                if (result.code === 0) {
+                    this.items = result.data.records
+                    this.page.limit = result.data.current
+                    this.page.size = result.data.size
+                    this.page.total = result.data.total
+                }
+            })
+        }
+    },
     components: {
         bannerContainer,
         navContainer

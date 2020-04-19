@@ -1,14 +1,190 @@
 <template>
     <div>
         <div class="clearfix">
-            <div id="app" class="media-detail-wrp"><div class="media-info-wrp"><div class="bangumi-info-bg-wrp"><div class="bangumi-info-blurbg-wrapper"></div> <!----></div> <div class="media-info-content"><div class="media-info-inner clearfix"><div class="media-preview"><div class="common-lazy-img"><img alt="欢迎来到实力至上主义的教室" src="//i0.hdslb.com/bfs/bangumi/a79e331b7443ed5df5a2acd345dc41d598d46ff9.jpg@450w_600h.webp" lazy="loaded"></div> </div> <div class="media-info-r"><div class="media-info-title"><span class="media-info-title-t">欢迎来到实力至上主义的教室</span> <span class="media-tags" style="opacity: 1;"><span class="media-tag">小说改</span><span class="media-tag">校园</span></span></div> <div class="media-info-datas"><div class="media-info-count"><span class="media-info-count-item media-info-count-item-play"><span class="media-info-label">总播放</span> <em>1.7亿</em></span> <span class="media-info-count-item media-info-count-item-fans"><span class="media-info-label">追番人数</span> <em>595.4万</em></span> <span class="media-info-count-item media-info-count-item-review"><span class="media-info-label">弹幕总数</span> <em>404.5万</em></span></div> <div class="media-info-score-wrp"><div class="media-info-score"><div class="media-info-score-content">8.7</div> <div class="media-info-star-wrapper"><span class="review-stars"><i class="icon-star icon-star-light"><i></i></i><i class="icon-star icon-star-light"><i></i></i><i class="icon-star icon-star-light"><i></i></i><i class="icon-star icon-star-light"><i></i></i><i class="icon-star icon-star-half"><i></i></i></span> <div class="media-info-review-times">56304人评</div> <div class="to-review-btn"><i class="icon-edit"></i>
-                我要点评
-            </div></div></div> <!----></div></div> <div class="media-info-time"><span>2017年7月13日开播</span> <span>已完结, 全12话</span></div> <div class="media-info-intro"><span class="media-info-intro-text">简介：——真正的实力，平等究竟是什么？几乎百分之百实现升学、就业目标的全国首屈一指的名门校──高度育成高等学校。这间简直如同乐园般的学校，真面目却是唯有优秀者才能享受优待的实力至上主义学校！绫小路清隆被分配到最底层的D班。在那里，他遇见了成绩优异个性却超难搞的美少女──堀北铃音，和由体贴与温柔所构成，天使般的少女──栉田桔梗。与她们的相遇，使清隆的态度逐渐改变。</span> <!----> <!----></div> <div class="media-info-btns"><div class="btn-pay-wrapper is-vip"><!----> <a href="javascript:;" class="pay-btn ">大会员专享观看特权哦~</a> <div class="pic-wrapper"></div></div> <div class="bangumi-btn"><div class="btn-follow followed"><i></i>已追番</div> <div class="bangumi-options clearfix"><ul class="opt-list"><li class="">标记为 想看</li> <li class="">标记为 在看</li> <li class="disabled">标记为 已看</li> <li>取消追番</li></ul></div></div> <div class="share-module"><ul class="share-list clearfix" data-module="share_module_0"> <li share-type="weibo" class="share-btn btn-weibo"></li> <li share-type="qqzone" class="share-btn btn-qqzone"></li> <li share-type="qq" class="share-btn btn-qq"></li> <li share-type="baidu" class="share-btn btn-baidu"></li></ul></div></div></div></div></div></div> <div class="media-tab-wrp"><div class="media-tab-nav"><ul class="clearfix"><li class="on">作品详情</li></ul></div> <div class="media-tab-content"><div class="media-tab-detail-wrp clearfix"><div class="media-tab-detail-l-wrp"><div class="media-tab-detail-l"><div class="media-tab-module-wrp season-module"><div class="media-tab-module-content"><!----> <div><!----> <div class="sl-ep-nav"><div class="slider-wrapper"><div class="slider-content"><ul class="sl-ep-nav-list"><li class="sl-ep-nav-item">第1话-第6话</li><li class="sl-ep-nav-item on">第7话-第12话</li></ul></div> <div class="slider-contro clearfix"><div class="contro-item" style="display: none;"></div> <span class="slider-prev disabled" style="display: none;"></span> <i class="slider-prev-mask" style="display: none;"></i> <span class="slider-next disabled" style="display: none;"></span> <i class="slider-next-mask" style="display: none;"></i></div></div> <ul class="mode-select clearfix"><li title="详细模式" class="detail-mode selected"></li><li title="精简模式" class="simple-mode"></li></ul></div> <div class="sl-ep-list"><ul><li title="第7话：宁可有聪明的敌人也不要有无知的朋友。" class="misl-ep-item"><div class="misl-ep-img"><div class="common-lazy-img"><img alt="7" src="//i1.hdslb.com/bfs/archive/0b8f6190fa51f4f4933a3d8e314b230e3d23d0ec.jpg@192w_120h.webp" lazy="loaded"></div></div> <div class="misl-ep-text"><div class="misl-ep-index">第7话</div> <div class="misl-ep-title">宁可有聪明的敌人也不要有无知的朋友。</div></div> <span class="mark-icon badge-pink">会员</span></li><li title="第8话：进入此门者当舍弃一切希望。" class="misl-ep-item"><div class="misl-ep-img"><div class="common-lazy-img"><img alt="8" src="//i0.hdslb.com/bfs/archive/a597de9c92b214d961c8fc3fe997eabce5fd1cf8.jpg@192w_120h.webp" lazy="loaded"></div></div> <div class="misl-ep-text"><div class="misl-ep-index">第8话</div> <div class="misl-ep-title">进入此门者当舍弃一切希望。</div></div> <span class="mark-icon badge-pink">会员</span></li><li title="第9话：人注定要受自由之苦。" class="misl-ep-item"><div class="misl-ep-img"><div class="common-lazy-img"><img alt="9" src="//i0.hdslb.com/bfs/archive/f9c56ac57dc17086fcfa804bfe30defe6f541256.jpg@192w_120h.webp" lazy="loaded"></div></div> <div class="misl-ep-text"><div class="misl-ep-index">第9话</div> <div class="misl-ep-title">人注定要受自由之苦。</div></div> <span class="mark-icon badge-pink">会员</span></li><li title="第10话：说到最危险的背叛者 就是所有人自身所隐藏起来的另一面。" class="misl-ep-item"><div class="misl-ep-img"><div class="common-lazy-img"><img alt="10" src="//i0.hdslb.com/bfs/archive/a701d764751e4d3702892ba3d03283e6b429a6e2.jpg@192w_120h.webp" lazy="loaded"></div></div> <div class="misl-ep-text"><div class="misl-ep-index">第10话</div> <div class="misl-ep-title">说到最危险的背叛者 就是所有人自身所隐藏起来的另一面。</div></div> <span class="mark-icon badge-pink">会员</span></li><li title="第11话：然而，人们泛称为命运的事情却通常都是自己做出来的蠢事。" class="misl-ep-item"><div class="misl-ep-img"><div class="common-lazy-img"><img alt="11" src="//i0.hdslb.com/bfs/archive/e858fd8c1033481bbf31e540d4e8e222286cbecb.jpg@192w_120h.webp" lazy="loaded"></div></div> <div class="misl-ep-text"><div class="misl-ep-index">第11话</div> <div class="misl-ep-title">然而，人们泛称为命运的事情却通常都是自己做出来的蠢事。</div></div> <span class="mark-icon badge-pink">会员</span></li><li title="第12话：天才和疯子相互为邻。" class="misl-ep-item lastplay"><div class="misl-ep-img"><div class="common-lazy-img"><img alt="12" src="//i1.hdslb.com/bfs/archive/058c336eda9d5f5d20ae4cc1567b01d0898b3b4d.jpg@192w_120h.webp" lazy="loaded"></div></div> <div class="misl-ep-text"><div class="misl-ep-index">第12话</div> <div class="misl-ep-title">天才和疯子相互为邻。</div></div> <span class="mark-icon badge-pink">会员</span></li> <!----><!----><!----><!----><!----><!----></ul></div> <!----></div></div></div>   <div class="bangumi-media"><div class="bangumi-media-header"><h4>点评</h4> <div class="rate-wrapper clearfix"><div class="btn-go-write"><i class="icon-write"><b class="path1"></b><b class="path2"></b><b class="path3"></b></i>去写点评</div> <!----></div> <div class="btn-more-review">查看全部点评</div></div> <div class="bangumi-media-body clearfix"><!----> <ul class="bangumi-review-list clearfix"><li class="bangumi-review-item"><div class="item-header"><a href="//space.bilibili.com/8386200" target="_blank" class="author-name">-白衣金带-</a> <!----> <ul class="item-star-wrapper clearfix"><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li></ul> <!----></div> <a href="//www.bilibili.com/read/cv2207651" target="_blank"><div class="long-title">不要再问女主角是谁这么明显的问题了</div> <p class="review-content long smaller">女主角定义：作品中饰演主角的女性，在各项活动中起主要作用的女性。其出场率通常贯穿全部剧情，或在剧情发展中起重要推动作用，对作品剧情起推动作用或作品中出场最多的女性。小说目前一共出了12卷（含4.5卷和7.5卷），主要人物总台词量(字）如下：绫小路清隆 118048堀北铃音 72243栉田桔梗 27193龙园翔 27122一之濑帆波 26764**********轻井泽惠 21159须藤健 17025池宽治 16052幸村辉彦 15458坂柳有栖 13489山内春树 10374南云雅 10335伊</p></a></li><li class="bangumi-review-item"><div class="item-header"><a href="//space.bilibili.com/201521430" target="_blank" class="author-name is-vip">宝安区浩哥</a> <!----> <ul class="item-star-wrapper clearfix"><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li></ul> <!----></div> <a href="//www.bilibili.com/read/cv1595532" target="_blank"><div class="long-title">如果没看过原著，这部番很好。</div> <p class="review-content long smaller">我在看完番后，这部番让我想找原著看一看。我从台湾角川买了现在已经出版了的部分，同时也在网上白嫖了日版的7.5-9卷。我谈谈对这部番的感受。（看书后感觉原著和这部番差别很大）下面涉及吐槽和剧透：番剧做到了小说的第三卷，但不过其实小说第四卷以后才真正有意思起来。番剧里对部分小说情节进行了魔改。且有一个非常重要的情节是学校社团和学生会招人那一段是个伏笔，装摄像头那一段也有许多因为缺乏必要的细节导致让人摸不着头脑的地方。原作中是轻井泽惠去找女更衣室的SD卡，在番剧中被替换成了堀北。而且番剧没有过多的对人</p></a></li><li class="bangumi-review-item"><div class="item-header"><a href="//space.bilibili.com/97195808" target="_blank" class="author-name is-vip">Assassin血塗蝶</a> <!----> <ul class="item-star-wrapper clearfix"><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star"><!----></li><li class="icon-star"><!----></li></ul> <!----></div> <a href="//www.bilibili.com/read/cv4725870" target="_blank"><div class="long-title">不要再问女主角是谁这么愚蠢的问题了</div> <p class="review-content long smaller">目前，官方，作者在访谈里说了，目前实教没有明确的女主，所以任何造谣说女主是XXXX 之类的，可以停停了，作者比你们懂https://tieba.baidu.com/p/6467649127?pid=129648734399&amp;cid=0&amp;red_tag=1189665314#129648734399作者没说清楚就是为了让你们不要再争了，安心看书就可以了，不好吗，有很多人总想争女主。就为了找那点可怜的存在感，他们认为自己喜欢的角色是女主之类的头衔可以让他们感到很爽，然而根本没用，只是可怜的自我安慰罢</p></a></li></ul></div></div><div class="media-tab-module-wrp"><div class="media-tab-module-title">更多推荐</div> <div class="media-tab-module-more">
+            <div id="app" class="media-detail-wrp">
+                <div class="media-info-wrp">
+                    <div class="bangumi-info-bg-wrp">
+                        <div class="bangumi-info-blurbg-wrapper"></div> <!---->
+                    </div>
+                    <div class="media-info-content">
+                        <div class="media-info-inner clearfix">
+                            <div class="media-preview">
+                                <div class="common-lazy-img">
+                                    <img :alt="data.name" :src="'https://barrage-web.oss-cn-hangzhou.aliyuncs.com/' + data.image" lazy="loaded">
+                                </div>
+                             </div>
+                             <div class="media-info-r">
+                                 <div class="media-info-title">
+                                     <span class="media-info-title-t">{{data.name}}</span>
+                                     <span class="media-tags" style="opacity: 1;">
+                                         <span class="media-tag">小说改</span>
+                                         <span class="media-tag">校园</span>
+                                    </span>
+                                </div>
+                                <div class="media-info-datas">
+                                    <div class="media-info-count">
+                                        <span class="media-info-count-item media-info-count-item-play">
+                                            <span class="media-info-label">总播放</span>
+                                            <em>{{data.totalPlay}}</em>
+                                        </span>
+                                        <span class="media-info-count-item media-info-count-item-fans">
+                                            <span class="media-info-label">追番人数</span>
+                                            <em>{{data.totalFollow}}</em>
+                                        </span>
+                                        <span class="media-info-count-item media-info-count-item-review">
+                                            <span class="media-info-label">弹幕总数</span>
+                                            <em>{{data.totalDanmaku}}</em>
+                                        </span>
+                                    </div>
+                                    <div class="media-info-score-wrp">
+                                        <div class="media-info-score">
+                                            <div class="media-info-score-content">{{data.score}}</div>
+                                            <div class="media-info-star-wrapper">
+                                                <span class="review-stars">
+                                                    <i class="icon-star icon-star-light">
+                                                        <i></i>
+                                                    </i>
+                                                    <i class="icon-star icon-star-light">
+                                                        <i></i>
+                                                    </i>
+                                                    <i class="icon-star icon-star-light">
+                                                        <i></i>
+                                                    </i>
+                                                    <i class="icon-star icon-star-light">
+                                                        <i></i>
+                                                    </i>
+                                                    <i class="icon-star icon-star-half">
+                                                        <i></i>
+                                                    </i>
+                                                </span>
+                                                <div class="media-info-review-times">{{data.totalEvaluate}}人评</div>
+                                                <div class="to-review-btn">
+                                                    <i class="icon-edit"></i>
+                                                        我要点评
+                                                </div>
+                                            </div>
+                                        </div> <!---->
+                                    </div>
+                                </div>
+                                <div class="media-info-time">
+                                    <span>{{data.upperSelfTime}}开播</span>
+                                    <span v-if="data.isOver">已完结, 全{{data.count}}话</span>
+                                    <span v-if="!data.isOver">连载中, 每周{{data.videoUpdateTime}}更新</span>
+                                </div>
+                                <div class="media-info-intro">
+                                    <span class="media-info-intro-text">
+                                        {{data.description}}
+                                    </span> <!----> <!---->
+                                </div>
+                                <div class="media-info-btns">
+                                    <div class="btn-pay-wrapper is-vip"><!---->
+                                        <a href="javascript:;" class="pay-btn ">大会员专享观看特权哦~</a>
+                                        <div class="pic-wrapper"></div>
+                                    </div>
+                                    <div class="bangumi-btn">
+                                        <div class="btn-follow followed">
+                                            <i></i>已追番
+                                        </div>
+                                        <div class="bangumi-options clearfix">
+                                            <ul class="opt-list">
+                                                <li class="">标记为 想看</li>
+                                                <li class="">标记为 在看</li>
+                                                <li class="disabled">标记为 已看</li>
+                                                <li>取消追番</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="share-module">
+                                        <ul class="share-list clearfix" data-module="share_module_0">
+                                            <li share-type="weibo" class="share-btn btn-weibo"></li>
+                                            <li share-type="qqzone" class="share-btn btn-qqzone"></li>
+                                            <li share-type="qq" class="share-btn btn-qq"></li>
+                                            <li share-type="baidu" class="share-btn btn-baidu"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="media-tab-wrp">
+                    <div class="media-tab-nav">
+                        <ul class="clearfix">
+                            <li class="on">作品详情</li>
+                        </ul>
+                    </div>
+                    <div class="media-tab-content">
+                        <div class="media-tab-detail-wrp clearfix">
+                            <div class="media-tab-detail-l-wrp">
+                                <div class="media-tab-detail-l">
+                                    <div class="media-tab-module-wrp season-module">
+                                        <div class="media-tab-module-content"><!---->
+                                            <div><!---->
+                                                <div class="sl-ep-nav">
+                                                    <div class="slider-wrapper">
+                                                        <div class="slider-content">
+                                                            <ul class="sl-ep-nav-list">
+                                                                <li class="sl-ep-nav-item">第1话-第6话</li>
+                                                                <li class="sl-ep-nav-item on">第7话-第12话</li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="slider-contro clearfix">
+                                                            <div class="contro-item" style="display: none;">
+                                                        </div>
+                                                        <span class="slider-prev disabled" style="display: none;"></span>
+                                                        <i class="slider-prev-mask" style="display: none;"></i>
+                                                        <span class="slider-next disabled" style="display: none;"></span>
+                                                        <i class="slider-next-mask" style="display: none;"></i>
+                                                    </div>
+                                                </div>
+                                                <ul class="mode-select clearfix">
+                                                    <li title="详细模式" class="detail-mode selected"></li>
+                                                    <li title="精简模式" class="simple-mode"></li>
+                                                </ul>
+                                            </div>
+                                            <div class="sl-ep-list">
+                                                <ul>
+                                                    <li title="第7话：宁可有聪明的敌人也不要有无知的朋友。" class="misl-ep-item">
+                                                        <div class="misl-ep-img">
+                                                            <div class="common-lazy-img">
+                                                                <img alt="7" src="//i1.hdslb.com/bfs/archive/0b8f6190fa51f4f4933a3d8e314b230e3d23d0ec.jpg@192w_120h.webp" lazy="loaded">
+                                                            </div>
+                                                        </div>
+                                                        <div class="misl-ep-text">
+                                                            <div class="misl-ep-index">第7话</div>
+                                                            <div class="misl-ep-title">宁可有聪明的敌人也不要有无知的朋友。</div>
+                                                        </div>
+                                                        <span class="mark-icon badge-pink">会员</span>
+                                                    </li>
+                                                    <li title="第8话：进入此门者当舍弃一切希望。" class="misl-ep-item"><div class="misl-ep-img"><div class="common-lazy-img"><img alt="8" src="//i0.hdslb.com/bfs/archive/a597de9c92b214d961c8fc3fe997eabce5fd1cf8.jpg@192w_120h.webp" lazy="loaded"></div></div> <div class="misl-ep-text"><div class="misl-ep-index">第8话</div> <div class="misl-ep-title">进入此门者当舍弃一切希望。</div></div> <span class="mark-icon badge-pink">会员</span></li><li title="第9话：人注定要受自由之苦。" class="misl-ep-item"><div class="misl-ep-img"><div class="common-lazy-img"><img alt="9" src="//i0.hdslb.com/bfs/archive/f9c56ac57dc17086fcfa804bfe30defe6f541256.jpg@192w_120h.webp" lazy="loaded"></div></div> <div class="misl-ep-text"><div class="misl-ep-index">第9话</div> <div class="misl-ep-title">人注定要受自由之苦。</div></div> <span class="mark-icon badge-pink">会员</span></li><li title="第10话：说到最危险的背叛者 就是所有人自身所隐藏起来的另一面。" class="misl-ep-item"><div class="misl-ep-img"><div class="common-lazy-img"><img alt="10" src="//i0.hdslb.com/bfs/archive/a701d764751e4d3702892ba3d03283e6b429a6e2.jpg@192w_120h.webp" lazy="loaded"></div></div> <div class="misl-ep-text"><div class="misl-ep-index">第10话</div> <div class="misl-ep-title">说到最危险的背叛者 就是所有人自身所隐藏起来的另一面。</div></div> <span class="mark-icon badge-pink">会员</span></li><li title="第11话：然而，人们泛称为命运的事情却通常都是自己做出来的蠢事。" class="misl-ep-item"><div class="misl-ep-img"><div class="common-lazy-img"><img alt="11" src="//i0.hdslb.com/bfs/archive/e858fd8c1033481bbf31e540d4e8e222286cbecb.jpg@192w_120h.webp" lazy="loaded"></div></div> <div class="misl-ep-text"><div class="misl-ep-index">第11话</div> <div class="misl-ep-title">然而，人们泛称为命运的事情却通常都是自己做出来的蠢事。</div></div> <span class="mark-icon badge-pink">会员</span></li><li title="第12话：天才和疯子相互为邻。" class="misl-ep-item lastplay"><div class="misl-ep-img"><div class="common-lazy-img"><img alt="12" src="//i1.hdslb.com/bfs/archive/058c336eda9d5f5d20ae4cc1567b01d0898b3b4d.jpg@192w_120h.webp" lazy="loaded"></div></div> <div class="misl-ep-text"><div class="misl-ep-index">第12话</div> <div class="misl-ep-title">天才和疯子相互为邻。</div></div> <span class="mark-icon badge-pink">会员</span></li> <!----><!----><!----><!----><!----><!----></ul></div> <!----></div></div></div>   <div class="bangumi-media"><div class="bangumi-media-header"><h4>点评</h4> <div class="rate-wrapper clearfix"><div class="btn-go-write"><i class="icon-write"><b class="path1"></b><b class="path2"></b><b class="path3"></b></i>去写点评</div> <!----></div> <div class="btn-more-review">查看全部点评</div></div> <div class="bangumi-media-body clearfix"><!----> <ul class="bangumi-review-list clearfix"><li class="bangumi-review-item"><div class="item-header"><a href="//space.bilibili.com/8386200" target="_blank" class="author-name">-白衣金带-</a> <!----> <ul class="item-star-wrapper clearfix"><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li></ul> <!----></div> <a href="//www.bilibili.com/read/cv2207651" target="_blank"><div class="long-title">不要再问女主角是谁这么明显的问题了</div> <p class="review-content long smaller">女主角定义：作品中饰演主角的女性，在各项活动中起主要作用的女性。其出场率通常贯穿全部剧情，或在剧情发展中起重要推动作用，对作品剧情起推动作用或作品中出场最多的女性。小说目前一共出了12卷（含4.5卷和7.5卷），主要人物总台词量(字）如下：绫小路清隆 118048堀北铃音 72243栉田桔梗 27193龙园翔 27122一之濑帆波 26764**********轻井泽惠 21159须藤健 17025池宽治 16052幸村辉彦 15458坂柳有栖 13489山内春树 10374南云雅 10335伊</p></a></li><li class="bangumi-review-item"><div class="item-header"><a href="//space.bilibili.com/201521430" target="_blank" class="author-name is-vip">宝安区浩哥</a> <!----> <ul class="item-star-wrapper clearfix"><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li></ul> <!----></div> <a href="//www.bilibili.com/read/cv1595532" target="_blank"><div class="long-title">如果没看过原著，这部番很好。</div> <p class="review-content long smaller">我在看完番后，这部番让我想找原著看一看。我从台湾角川买了现在已经出版了的部分，同时也在网上白嫖了日版的7.5-9卷。我谈谈对这部番的感受。（看书后感觉原著和这部番差别很大）下面涉及吐槽和剧透：番剧做到了小说的第三卷，但不过其实小说第四卷以后才真正有意思起来。番剧里对部分小说情节进行了魔改。且有一个非常重要的情节是学校社团和学生会招人那一段是个伏笔，装摄像头那一段也有许多因为缺乏必要的细节导致让人摸不着头脑的地方。原作中是轻井泽惠去找女更衣室的SD卡，在番剧中被替换成了堀北。而且番剧没有过多的对人</p></a></li><li class="bangumi-review-item"><div class="item-header"><a href="//space.bilibili.com/97195808" target="_blank" class="author-name is-vip">Assassin血塗蝶</a> <!----> <ul class="item-star-wrapper clearfix"><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star icon-star-light"><!----></li><li class="icon-star"><!----></li><li class="icon-star"><!----></li></ul> <!----></div> <a href="//www.bilibili.com/read/cv4725870" target="_blank"><div class="long-title">不要再问女主角是谁这么愚蠢的问题了</div> <p class="review-content long smaller">目前，官方，作者在访谈里说了，目前实教没有明确的女主，所以任何造谣说女主是XXXX 之类的，可以停停了，作者比你们懂https://tieba.baidu.com/p/6467649127?pid=129648734399&amp;cid=0&amp;red_tag=1189665314#129648734399作者没说清楚就是为了让你们不要再争了，安心看书就可以了，不好吗，有很多人总想争女主。就为了找那点可怜的存在感，他们认为自己喜欢的角色是女主之类的头衔可以让他们感到很爽，然而根本没用，只是可怜的自我安慰罢</p></a></li></ul></div></div><div class="media-tab-module-wrp"><div class="media-tab-module-title">更多推荐</div> <div class="media-tab-module-more">
         更多
-        </div> <div class="media-tab-module-content"><div class="mtlr-list-wrp"><div class="block-slide-wrp"><div class="slider-wrapper"><div class="slider-content"><ul class="block-slide-img-list clearfix" style="transform: translateX(0px);"><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss25510" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/4d9f43eb3dba572797f8915f8f28efce9e58d756.jpg@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss25510" target="_blank"><div class="slide-item-title">刀剑神域 Alicization</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss24625" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/0f11dfac18d744518669b2d211263f03d41d619c.png@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss24625" target="_blank"><div class="slide-item-title">Angels of Death</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss184" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/f7175cd20de509e2bfd43255c28cf4e24841480d.jpg@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss184" target="_blank"><div class="slide-item-title">NO GAME NO LIFE 游戏人生</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss25733" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/1cc333ff578e5ea9fded7e454953a4e2291440c2.png@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss25733" target="_blank"><div class="slide-item-title">青春猪头少年不会梦到兔女郎学姐</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss4452" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/fcdb9db0cc3f5c0c3aaa4ca1a9ddea6c121db471.jpg@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss4452" target="_blank"><div class="slide-item-title">刀剑神域</div></a></div></li></ul></div> <div class="slider-contro clearfix"><div class="contro-item" style="display: none; left: 0px;"></div> <span class="slider-prev disabled" style="display: none;"></span> <i class="slider-prev-mask" style="display: none;"></i> <span class="slider-next" style="display: none;"></span> <i class="slider-next-mask" style="display: none;"></i></div></div></div></div></div></div></div></div> <div class="media-tab-detail-r"><div class="media-info-card"><div class="mic-title">角色声优</div> <div><div class="mic-evaluate" style="height: 164px;"><span class="" style="opacity: 0;"><p>堀北铃音：鬼头明里<br>绫小路清隆：千叶翔也<br>佐仓爱里：M・A・O<br>栉田桔梗：久保ユリカ<br>一之濑帆波：东山奈央<br>龙园翔：水中雅章<br>神崎隆二：若山晃久<br>伊吹澪：小松未可子<br>橘茜：小原好美</p></span> <span class="static"><p>堀北铃音：鬼头明里<br>绫小路清隆：千叶翔也<br>佐仓爱里：M・A・O<br>栉田桔梗：久保ユリカ<br>一之濑帆波：东山奈央<br>龙园翔：水中雅章<br>神崎隆二：若山晃久<br>伊吹澪：小松未可子<br>橘茜：小原好美</p></span></div> <div class="mic-expand">展开更多</div></div></div><div class="media-info-card"><div class="mic-title">STAFF</div> <div><div class="mic-evaluate" style="height: auto;"><span class="hide" style="opacity: 0;"><p>导演：橋本裕之、岸誠二<br>人物设定：森田和明<br>主题歌演出：ZAQ<br>原作：衣笠彰梧<br>角色设计：森田和明<br>系列构成：朱白あおい<br>动画制作：Lerche</p></span> <span class=""><p>导演：橋本裕之、岸誠二<br>人物设定：森田和明<br>主题歌演出：ZAQ<br>原作：衣笠彰梧<br>角色设计：森田和明<br>系列构成：朱白あおい<br>动画制作：Lerche</p></span></div> <!----></div></div> </div></div></div></div> <div class="short-review-masker" style="display:none;"><div class="short-review-content"><div class="dialog-close"></div> <div class="review-header-wrap"><div class="review-edit-header"><a href="//www.bilibili.com/bangumi/media/md6339/" target="_blank" class="media-img"><img src="//i0.hdslb.com/bfs/bangumi/a79e331b7443ed5df5a2acd345dc41d598d46ff9.jpg@100w_133h.jpg" alt=""></a> <div class="media-info"><h4>欢迎来到实力至上主义的教室</h4> <p class="rate-tip">请发表你对这部作品的评分</p> <div class="rate-wrap"><ul class="rate-star clearfix"><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li></ul> <!----></div></div></div></div> <div class="review-body-wrap"><textarea name="short-review" placeholder=""></textarea> <span class="tip" style="color:#99a2aa;">0/100</span> <button class="mr-btn">发表短评</button></div> <div class="mr-long-review">想写长评，点这里 &gt;</div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----></div>
+        </div> <div class="media-tab-module-content"><div class="mtlr-list-wrp"><div class="block-slide-wrp"><div class="slider-wrapper"><div class="slider-content"><ul class="block-slide-img-list clearfix" style="transform: translateX(0px);"><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss25510" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/4d9f43eb3dba572797f8915f8f28efce9e58d756.jpg@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss25510" target="_blank"><div class="slide-item-title">刀剑神域 Alicization</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss24625" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/0f11dfac18d744518669b2d211263f03d41d619c.png@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss24625" target="_blank"><div class="slide-item-title">Angels of Death</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss184" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/f7175cd20de509e2bfd43255c28cf4e24841480d.jpg@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss184" target="_blank"><div class="slide-item-title">NO GAME NO LIFE 游戏人生</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss25733" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/1cc333ff578e5ea9fded7e454953a4e2291440c2.png@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss25733" target="_blank"><div class="slide-item-title">青春猪头少年不会梦到兔女郎学姐</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss4452" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/fcdb9db0cc3f5c0c3aaa4ca1a9ddea6c121db471.jpg@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss4452" target="_blank"><div class="slide-item-title">刀剑神域</div></a></div></li></ul></div> <div class="slider-contro clearfix"><div class="contro-item" style="display: none; left: 0px;"></div> <span class="slider-prev disabled" style="display: none;"></span> <i class="slider-prev-mask" style="display: none;"></i> <span class="slider-next" style="display: none;"></span> <i class="slider-next-mask" style="display: none;"></i></div></div></div></div></div></div></div></div> <div class="media-tab-detail-r"><div class="media-info-card"><div class="mic-title">角色声优</div> <div><div class="mic-evaluate" style="height: 164px;"><span class="" style="opacity: 0;"></span> <span class="static" v-html="data.roleSound"></span></div> <div class="mic-expand">展开更多</div></div></div><div class="media-info-card"><div class="mic-title">STAFF</div> <div><div class="mic-evaluate" style="height: auto;"><span class="hide" style="opacity: 0;" ></span> <span class="" v-html="data.staff"></span></div> <!----></div></div> </div></div></div></div> <div class="short-review-masker" style="display:none;"><div class="short-review-content"><div class="dialog-close"></div> <div class="review-header-wrap"><div class="review-edit-header"><a href="//www.bilibili.com/bangumi/media/md6339/" target="_blank" class="media-img"><img src="//i0.hdslb.com/bfs/bangumi/a79e331b7443ed5df5a2acd345dc41d598d46ff9.jpg@100w_133h.jpg" alt=""></a> <div class="media-info"><h4>欢迎来到实力至上主义的教室</h4> <p class="rate-tip">请发表你对这部作品的评分</p> <div class="rate-wrap"><ul class="rate-star clearfix"><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li></ul> <!----></div></div></div></div> <div class="review-body-wrap"><textarea name="short-review" placeholder=""></textarea> <span class="tip" style="color:#99a2aa;">0/100</span> <button class="mr-btn">发表短评</button></div> <div class="mr-long-review">想写长评，点这里 &gt;</div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----></div>
         </div>
     </div>
 </template>
+
+<script>
+import * as anime from '@/api/anime'
+export default {
+    data () {
+        return {
+            data: {
+
+            }
+        }
+    },
+    created () {
+        this.init()
+    },
+    methods: {
+        init () {
+            anime.detail(this.$router.currentRoute.query.id).then(result => {
+                this.data = result.data
+            })
+        }
+    }
+}
+</script>
 
 <style lang="scss">
 .bangumi-info-blurbg-wrapper .bangumi-info-blurbg {
