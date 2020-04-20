@@ -13,7 +13,7 @@ export default new VueRouter({
         },
         {
             path: '/play',
-            name: 'home',
+            name: 'play',
             component: () => import('@/views/play/index')
         },
         {

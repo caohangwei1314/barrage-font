@@ -1,15 +1,15 @@
 <template>
     <div class="wp clearfixs">
         <div class="video-left fl">
-            <vue-dplayer></vue-dplayer>
+            <vue-dplayer :video="video"></vue-dplayer>
             <div class="media-wrapper">
-                <h1 title="命运-冠位指定 绝对魔兽战线 巴比伦尼亚：第21节 冠位指定">
-                    命运-冠位指定 绝对魔兽战线 巴比伦尼亚：第21节 冠位指定
+                <h1 :title="anime.name + '：第' + currentSeries.number + '节 ' + currentSeries.title">
+                    {{anime.name}}：第{{currentSeries.title}}节 {{currentSeries.title}}
                 </h1>
                 <div class="tool-bar clearfix report-wrap-module report-scroll-module">
                     <div class="coin-info">
                         <i class="iconfont icon-coins"></i>
-                        <span>77.1万</span>
+                        <span>{{currentSeries.totalCoin}}万</span>
                     </div>
                     <div class="share-info">
                         <i class="iconfont icon-share"></i>
@@ -22,41 +22,32 @@
                 </div>
                 <div class="media-info clearfix report-wrap-module">
                     <a href="//www.bilibili.com/bangumi/media/md28222061/" target="_blank" class="media-cover">
-                        <img src="../../assets/comic/video/ef60e620eb507d48c1e8e6002728fae4553f9161.png" alt="">
+                        <img :src="GLOBAL.oss + anime.image" alt="">
                     </a>
                     <div class="media-right">
-                        <a href="//www.bilibili.com/bangumi/media/md28222061/" target="_blank" title="命运-冠位指定 绝对魔兽战线 巴比伦尼亚" class="media-title">
-                            命运-冠位指定 绝对魔兽战线 巴比伦尼亚
+                        <a href="//www.bilibili.com/bangumi/media/md28222061/" target="_blank" :title="anime.name" class="media-title">
+                            {{anime.name}}
                         </a>
                         <div class="media-count">
-                            1.1亿播放&nbsp;&nbsp;·&nbsp;&nbsp;143.8万弹幕&nbsp;&nbsp;·&nbsp;&nbsp;399万系列追番
+                            {{anime.totalPlay}}播放&nbsp;&nbsp;·&nbsp;&nbsp;{{anime.totalDanmaku}}弹幕&nbsp;&nbsp;·&nbsp;&nbsp;{{anime.totalFollow}}系列追番
                         </div>
                         <div class="pub-wrapper clearfix">
                             <a href="//www.bilibili.com/anime/" target="_blank" class="home-link">番剧</a>
-                            <span class="pub-info">已完结, 全25话</span>
-                            <a href="//www.bilibili.com/video/BV1fE411c7D8/" target="_blank" class="av-link">BV1fE411c7D8</a>
+                            <span class="pub-info">已完结, 全{{anime.count}}话</span>
+                            <a href="//www.bilibili.com/video/BV1fE411c7D8/" target="_blank" class="av-link">{{anime.id}}</a>
                         </div>
                         <a href="//www.bilibili.com/bangumi/media/md28222061/" target="_blank" class="media-desc webkit-ellipsis">
                             <span class="absolute">
-                                人理续存保障机构·迦勒底，对于仅凭魔术无法看见的世界，仅凭科学无法计算的世界进行观测，为了让已被证明会灭亡于2017年的人类史存续下去，日夜持续着活动。
-                                人类灭亡的原因，是在历史上数个地点突然出现的“无法观测领域”——“特异点”。
-                                迦勒底唯一残存的御主·藤丸立香，与亚从者玛修·基列莱特一同介入这些特异点的事象，从而执行将其解明或破坏的禁断仪式——“圣杯探索 Grand Order”。
-                                这一次新发现的是第七个特异点——纪元前2655年的古代美索不达米亚。 由结束了不老不死灵草的探索的“天之楔·贤王吉尔伽美什”所统治，以繁荣而自豪的乌鲁克之地，在三柱女神及众多魔兽的蹂躏下面临灭亡的危机。 以及，通过前往过去的时间旅行——“灵子转移”而到达乌鲁克之地的藤丸与玛修，所遇到的是 阻挡住魔兽猛攻的要塞都市·绝对魔兽战线，以及人们那即使暴露于威胁之下仍然拼命求生的样子。 袭来的诸神与魔兽。以及对其反抗的人类——。
-                                这里是人与神分道扬镳，命运的时代。
-                                跨越了六个探索（Order）的两人——藤丸与玛修所挑战的光环开始了。
+                                {{anime.description}}
                             </span>
-                            <span>人理续存保障机构·迦勒底，对于仅凭魔术无法看见的世界，仅凭科学无法计算的世界进行观测，为了让已被证明会灭亡于2017年的人类史存续下去，日夜持续着活动。
-                                人类灭亡的原因，是在历史上数个地点突然出现的“无法观测领域”——“特异点”。
-                                迦勒底唯一残存的御主·藤丸立香，与亚从者玛修·基列莱特一同介入这些特异点的事象，从而执行将其解明或破坏的禁断仪式——“圣杯探索 Grand Order”。
-                                这一次新发现的是第七个特异点——纪元前2655年的古代美索不达米亚。 由结束了不老不死灵草的探索的“天之楔·贤王吉尔伽美什”所统治，以繁荣而自豪的乌鲁克之地，在三柱女神及众多魔兽的蹂躏下面临灭亡的危机。 以及，通过前往过去的时间旅行——“灵子转移”而到达乌鲁克之地的藤丸与玛修，所遇到的是 阻挡住魔兽猛攻的要塞都市·绝对魔兽战线，以及人们那即使暴露于威胁之下仍然拼命求生的样子。 袭来的诸神与魔兽。以及对其反抗的人类——。
-                                这里是人与神分道扬镳，命运的时代。
-                                跨越了六个探索（Order）的两人——藤丸与玛修所挑战的光环开始了。
+                            <span>
+                                {{anime.description}}
                             </span>
                             <i style="">展开</i>
                         </a>
                         <div class="media-rating">
-                            <h4 class="score">9.4</h4>
-                            <p>12.6万人评分</p>
+                            <h4 class="score">{{anime.score}}</h4>
+                            <p>{{anime.totalEvaluate}}人评分</p>
                         </div>
                     </div>
                 </div>
@@ -70,13 +61,10 @@
                             <a href="//www.bilibili.com/read/cv5116701" target="_blank">
                                 <div class="review-body">
                                     <div class="review-header clearfix">
-                                        <a href="//space.bilibili.com/2908810/" target="_blank" class="review-author is-vip">王哈无双中</a>
+                                        <a href="//space.bilibili.com/2908810/" target="_blank" class="review-author is-vip">{{item.author}}</a>
                                         <ul class="review-star clearfix">
-                                            <li><!----> <i class="iconfont icon-star-full"></i></li>
-                                            <li><!----> <i class="iconfont icon-star-full"></i></li>
-                                            <li><!----> <i class="iconfont icon-star-full"></i></li>
-                                            <li><i class="iconfont icon-star-empty"></i> <!----></li>
-                                            <li><i class="iconfont icon-star-empty"></i> <!----></li>
+                                            <li v-for="itemChild in parseInt(item.evaluateScore / 2)" :key="itemChild"><!----> <i class="iconfont icon-star-full"></i></li>
+                                            <li v-for="itemChild in parseInt((10-item.evaluateScore) / 2)" :key="itemChild"><i class="iconfont icon-star-empty"></i> <!----></li>
                                         </ul>
                                     </div>
                                     <div class="review-title">
@@ -106,13 +94,14 @@
                     <span class="mode-change" style="position:relative">
                         <i report-id="click_ep_switch" class="iconfont icon-ep-list-detail"></i> <!---->
                     </span>
-                    <span class="ep-list-progress">25/25</span>
+                    <span class="ep-list-progress">{{series.total}}/{{series.total}}</span>
                 </div>
                 <div class="list-wrapper longlist">
                     <ul>
-                        <li v-for="(item,index) in items" :key="item.id" class="ep-item" style="left: 0px; right: 0px;" :style="{top:index*36 + 'px'}">
+                        <li v-for="(item,index) in series.records" :key="item.id" class="ep-item" style="left: 0px; right: 0px;" :style="{top:index*36 + 'px'}">
                             <i class="iconfont icon-play"></i>
-                            <span :title="'第' + item.count + '节 ' + item.title" class="ep-title">第{{item.count}}节 {{item.title}}</span>
+                            <span v-if="item.id === currentSeries.id" :title="'第' + item.number + '节 ' + item.title" class="ep-title on">第{{item.number}}节 {{item.title}}</span>
+                            <span v-if="item.id !== currentSeries.id" :title="'第' + item.number + '节 ' + item.title" class="ep-title on">第{{item.number}}节 {{item.title}}</span>
                         </li>
                     </ul>
                 </div>
@@ -123,29 +112,26 @@
 
 <script>
 import VueDplayer from '@/components/common/VueDplayers'
+import * as anime from '@/api/anime'
+import * as animeSeries from '@/api/animeSeries'
+import * as articles from '@/api/articles'
 export default {
-    components: {
-        VueDplayer
-    },
     data () {
         return {
-            items: [
-                {
-                    id: 1,
-                    count: '0',
-                    title: '旅途的开始'
-                },
-                {
-                    id: 2,
-                    count: '1',
-                    title: '旅途的开始'
-                },
-                {
-                    id: 3,
-                    count: '2',
-                    title: '旅途的开始'
-                }
-            ],
+            id: 0,
+            animeId: 0,
+            video: {
+                url: ''
+            },
+            anime: {
+
+            },
+            currentSeries: {
+
+            },
+            series: {
+
+            },
             evaluate: [
                 {
                     id: 1,
@@ -167,11 +153,39 @@ export default {
                 }
             ]
         }
+    },
+    components: {
+        VueDplayer
+    },
+    created () {
+        this.init()
+    },
+    methods: {
+        init () {
+            this.id = this.$router.currentRoute.query.id
+            this.animeId = this.$router.currentRoute.query.animeId
+            this.video.url = this.GLOBAL.oss + this.$router.currentRoute.query.video
+            anime.detail(this.animeId).then(result => {
+                this.anime = result.data
+            })
+            animeSeries.detail(this.id).then(result => {
+                this.currentSeries = result.data
+            })
+            animeSeries.page(this.animeId, 1, 500).then(result => {
+                this.series = result.data
+            })
+            articles.listThree(this.animeId).then(result => {
+                this.evaluate = result.data
+            })
+        }
     }
 }
 </script>
 
 <style lang="scss">
+.video-right .ep-list-wrapper .list-wrapper ul .ep-item .ep-title.on {
+    color:#00a1d6
+}
 .video-left{
     width: 70%;
     padding-top: 10px;

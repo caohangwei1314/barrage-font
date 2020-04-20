@@ -124,7 +124,7 @@
                                                     <div class="slider-wrapper">
                                                         <div class="slider-content">
                                                             <ul class="sl-ep-nav-list">
-                                                                <li class="sl-ep-nav-item on" v-for="item in (series.total / series.size)" :key="item">第{{item*6+1}}话-第{{(item+1)*6}}话</li>
+                                                                <li class="sl-ep-nav-item on" v-for="item in (parseInt((this.series.total / this.series.size)) + 1)" :key="item">第{{(item-1)*6+1}}话-第{{item*6}}话</li>
                                                             </ul>
                                                         </div>
                                                         <div class="slider-contro clearfix">
@@ -144,16 +144,18 @@
                                             <div class="sl-ep-list">
                                                 <ul>
                                                     <li v-for="item in series.records" :key="item.id" :title="'第'+item.number+'话：'+item.title+'。'" class="misl-ep-item">
-                                                        <div class="misl-ep-img">
-                                                            <div class="common-lazy-img">
-                                                                <img alt="7" src="//i1.hdslb.com/bfs/archive/0b8f6190fa51f4f4933a3d8e314b230e3d23d0ec.jpg@192w_120h.webp" lazy="loaded">
+                                                        <a :href="'/play?id=' + item.id + '&animeId=' + animeId + '&video=' + item.videoUrl">
+                                                            <div class="misl-ep-img">
+                                                                <div class="common-lazy-img">
+                                                                    <img alt="7" :src="GLOBAL.oss + item.image" lazy="loaded">
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="misl-ep-text">
-                                                            <div class="misl-ep-index">第{{item.number}}话</div>
-                                                            <div class="misl-ep-title">{{item.title}}。</div>
-                                                        </div>
-                                                        <span v-if="isVip" class="mark-icon badge-pink">会员</span>
+                                                            <div class="misl-ep-text">
+                                                                <div class="misl-ep-index">第{{item.number}}话</div>
+                                                                <div class="misl-ep-title">{{item.title}}。</div>
+                                                            </div>
+                                                            <span v-if="item.isVip" class="mark-icon badge-pink">会员</span>
+                                                        </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -209,6 +211,7 @@ import * as animeSeries from '@/api/animeSeries'
 export default {
     data () {
         return {
+            animeId: 0,
             data: {
 
             },
@@ -224,10 +227,11 @@ export default {
     },
     methods: {
         init () {
-            anime.detail(this.$router.currentRoute.query.id).then(result => {
+            this.animeId = this.$router.currentRoute.query.id
+            anime.detail(this.animeId).then(result => {
                 this.data = result.data
             })
-            animeSeries.page(this.$router.currentRoute.query.id, this.series.current, this.series.size).then(result => {
+            animeSeries.page(this.animeId, this.series.current, this.series.size).then(result => {
                 this.series = result.data
             })
         }

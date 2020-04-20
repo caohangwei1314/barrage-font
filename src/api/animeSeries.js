@@ -6,3 +6,10 @@ export function page (id, limit, size) {
         method: 'get'
     })
 }
+
+export function detail (id) {
+    return request({
+        url: '/anime/series/detail/' + id,
+        method: 'get'
+    })
+}
