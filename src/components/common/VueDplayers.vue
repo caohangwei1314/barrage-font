@@ -20,9 +20,9 @@ export default {
             },
             danmaku: {
                 // ...
-                id: '66666',
-                api: 'http://127.0.0.1:1207/',
-                user: 'PinuoC'
+                id: '1',
+                api: 'http://localhost:8090/',
+                user: '1'
             },
             autoplay: false,
             player: null,
