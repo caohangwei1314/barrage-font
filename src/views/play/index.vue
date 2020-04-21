@@ -58,7 +58,7 @@
                     </div>
                     <div class="review-list">
                         <div class="review-item" v-for="item in evaluate" :key="item.id">
-                            <a href="//www.bilibili.com/read/cv5116701" target="_blank">
+                            <a :href="'/articles/detail?id=' + item.id" target="_blank">
                                 <div class="review-body">
                                     <div class="review-header clearfix">
                                         <a href="//space.bilibili.com/2908810/" target="_blank" class="review-author is-vip">{{item.author}}</a>

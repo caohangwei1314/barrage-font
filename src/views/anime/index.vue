@@ -179,28 +179,115 @@
                                     </div>
                                     <div class="bangumi-media-body clearfix">
                                         <ul class="bangumi-review-list clearfix">
-                                            <li class="bangumi-review-item">
+                                            <li v-for="item in evaluate" :key="item.id" class="bangumi-review-item">
                                                 <div class="item-header">
-                                                    <a href="//space.bilibili.com/8386200" target="_blank" class="author-name">-白衣金带-</a>
+                                                    <a href="//space.bilibili.com/8386200" target="_blank" class="author-name">{{item.author}}</a>
                                                     <ul class="item-star-wrapper clearfix">
-                                                        <li class="icon-star icon-star-light"><!----></li>
-                                                        <li class="icon-star icon-star-light"><!----></li>
-                                                        <li class="icon-star icon-star-light"><!----></li>
-                                                        <li class="icon-star icon-star-light"><!----></li>
-                                                        <li class="icon-star icon-star-light"><!----></li>
+                                                        <li v-for="itemChild in parseInt(item.evaluateScore / 2)" :key="itemChild" class="icon-star icon-star-light"><!----></li>
+                                                        <!-- <li class="icon-star icon-star-light"></li>
+                                                        <li class="icon-star icon-star-light"></li>
+                                                        <li class="icon-star icon-star-light"></li>
+                                                        <li class="icon-star icon-star-light"></li> -->
                                                     </ul> <!---->
                                                 </div>
-                                                <a href="//www.bilibili.com/read/cv2207651" target="_blank">
-                                                    <div class="long-title">不要再问女主角是谁这么明显的问题了</div>
-                                                    <p class="review-content long smaller">女主角定义：作品中饰演主角的女性，在各项活动中起主要作用的女性。其出场率通常贯穿全部剧情，或在剧情发展中起重要推动作用，对作品剧情起推动作用或作品中出场最多的女性。小说目前一共出了12卷（含4.5卷和7.5卷），主要人物总台词量(字）如下：绫小路清隆 118048堀北铃音 72243栉田桔梗 27193龙园翔 27122一之濑帆波 26764**********轻井泽惠 21159须藤健 17025池宽治 16052幸村辉彦 15458坂柳有栖 13489山内春树 10374南云雅 10335伊</p>
+                                                <a :href="'/articles/detail?id=' + item.id" target="_blank">
+                                                    <div class="long-title">{{item.title}}</div>
+                                                    <p class="review-content long smaller">{{item.simpleDesc}}</p>
                                                 </a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="media-tab-module-wrp"><div class="media-tab-module-title">更多推荐</div> <div class="media-tab-module-more">
-        更多
-        </div> <div class="media-tab-module-content"><div class="mtlr-list-wrp"><div class="block-slide-wrp"><div class="slider-wrapper"><div class="slider-content"><ul class="block-slide-img-list clearfix" style="transform: translateX(0px);"><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss25510" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/4d9f43eb3dba572797f8915f8f28efce9e58d756.jpg@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss25510" target="_blank"><div class="slide-item-title">刀剑神域 Alicization</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss24625" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/0f11dfac18d744518669b2d211263f03d41d619c.png@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss24625" target="_blank"><div class="slide-item-title">Angels of Death</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss184" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/f7175cd20de509e2bfd43255c28cf4e24841480d.jpg@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss184" target="_blank"><div class="slide-item-title">NO GAME NO LIFE 游戏人生</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss25733" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/1cc333ff578e5ea9fded7e454953a4e2291440c2.png@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss25733" target="_blank"><div class="slide-item-title">青春猪头少年不会梦到兔女郎学姐</div></a></div></li><li class="slide-item-wrp"><div class="slide-item-img"><a href="//www.bilibili.com/bangumi/play/ss4452" target="_blank"><!----> <div class="common-lazy-img"><img alt="" src="//i0.hdslb.com/bfs/bangumi/fcdb9db0cc3f5c0c3aaa4ca1a9ddea6c121db471.jpg@320w_428h.webp" lazy="loaded"></div></a></div> <div class="slide-item-info"><a href="//www.bilibili.com/bangumi/play/ss4452" target="_blank"><div class="slide-item-title">刀剑神域</div></a></div></li></ul></div> <div class="slider-contro clearfix"><div class="contro-item" style="display: none; left: 0px;"></div> <span class="slider-prev disabled" style="display: none;"></span> <i class="slider-prev-mask" style="display: none;"></i> <span class="slider-next" style="display: none;"></span> <i class="slider-next-mask" style="display: none;"></i></div></div></div></div></div></div></div></div> <div class="media-tab-detail-r"><div class="media-info-card"><div class="mic-title">角色声优</div> <div><div class="mic-evaluate" style="height: 164px;"><span class="" style="opacity: 0;"></span> <span class="static" v-html="data.roleSound"></span></div> <div class="mic-expand">展开更多</div></div></div><div class="media-info-card"><div class="mic-title">STAFF</div> <div><div class="mic-evaluate" style="height: auto;"><span class="hide" style="opacity: 0;" ></span> <span class="" v-html="data.staff"></span></div> <!----></div></div> </div></div></div></div> <div class="short-review-masker" style="display:none;"><div class="short-review-content"><div class="dialog-close"></div> <div class="review-header-wrap"><div class="review-edit-header"><a href="//www.bilibili.com/bangumi/media/md6339/" target="_blank" class="media-img"><img src="//i0.hdslb.com/bfs/bangumi/a79e331b7443ed5df5a2acd345dc41d598d46ff9.jpg@100w_133h.jpg" alt=""></a> <div class="media-info"><h4>欢迎来到实力至上主义的教室</h4> <p class="rate-tip">请发表你对这部作品的评分</p> <div class="rate-wrap"><ul class="rate-star clearfix"><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li><li><i class="icon-star"></i></li></ul> <!----></div></div></div></div> <div class="review-body-wrap"><textarea name="short-review" placeholder=""></textarea> <span class="tip" style="color:#99a2aa;">0/100</span> <button class="mr-btn">发表短评</button></div> <div class="mr-long-review">想写长评，点这里 &gt;</div></div></div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----></div>
+                                <div class="media-tab-module-wrp"><div class="media-tab-module-title">更多推荐</div>
+                                <div class="media-tab-module-more">更多</div>
+                                <div class="media-tab-module-content">
+                                    <div class="mtlr-list-wrp">
+                                        <div class="block-slide-wrp">
+                                            <div class="slider-wrapper">
+                                                <div class="slider-content">
+                                                    <ul class="block-slide-img-list clearfix" style="transform: translateX(0px);">
+                                                        <li class="slide-item-wrp" v-for="item in animes" :key="item.id">
+                                                            <div class="slide-item-img">
+                                                                <a href="//www.bilibili.com/bangumi/play/ss25510" target="_blank"><!---->
+                                                                    <div class="common-lazy-img">
+                                                                        <img alt="" :src="GLOBAL.oss + item.image" lazy="loaded">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="slide-item-info">
+                                                                <a href="//www.bilibili.com/bangumi/play/ss25510" target="_blank">
+                                                                    <div class="slide-item-title">{{item.name}}</div>
+                                                                </a>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="slider-contro clearfix">
+                                                    <div class="contro-item" style="display: none; left: 0px;"></div>
+                                                    <span class="slider-prev disabled" style="display: none;"></span>
+                                                    <i class="slider-prev-mask" style="display: none;"></i>
+                                                    <span class="slider-next" style="display: none;"></span>
+                                                    <i class="slider-next-mask" style="display: none;"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="media-tab-detail-r">
+                        <div class="media-info-card">
+                            <div class="mic-title">角色声优</div>
+                                <div>
+                                    <div class="mic-evaluate" style="height: 164px;">
+                                        <span class="" style="opacity: 0;"></span>
+                                        <span class="static" v-html="data.roleSound"></span>
+                                    </div>
+                                    <div class="mic-expand">展开更多</div>
+                                </div>
+                            </div>
+                            <div class="media-info-card">
+                                <div class="mic-title">STAFF</div>
+                                    <div>
+                                        <div class="mic-evaluate" style="height: auto;">
+                                        <span class="hide" style="opacity: 0;" ></span>
+                                        <span class="" v-html="data.staff"></span>
+                                        </div> <!---->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="short-review-masker" style="display:none;">
+                    <div class="short-review-content">
+                        <div class="dialog-close"></div>
+                        <div class="review-header-wrap">
+                            <div class="review-edit-header">
+                                <a href="//www.bilibili.com/bangumi/media/md6339/" target="_blank" class="media-img">
+                                    <img src="//i0.hdslb.com/bfs/bangumi/a79e331b7443ed5df5a2acd345dc41d598d46ff9.jpg@100w_133h.jpg" alt="">
+                                </a>
+                                <div class="media-info">
+                                    <h4>{{data.name}}</h4>
+                                    <p class="rate-tip">请发表你对这部作品的评分</p>
+                                    <div class="rate-wrap"><ul class="rate-star clearfix">
+                                        <li v-for="item in 5" :key="item">
+                                            <i class="icon-star"></i>
+                                        </li>
+                                    </ul> <!---->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-body-wrap">
+                        <textarea name="short-review" placeholder=""></textarea>
+                        <span class="tip" style="color:#99a2aa;">0/100</span>
+                        <button class="mr-btn">发表短评</button>
+                    </div>
+                    <div class="mr-long-review">想写长评，点这里 &gt;</div>
+                </div>
+            </div> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----></div>
         </div>
     </div>
 </template>
@@ -208,6 +295,7 @@
 <script>
 import * as anime from '@/api/anime'
 import * as animeSeries from '@/api/animeSeries'
+import * as articles from '@/api/articles'
 export default {
     data () {
         return {
@@ -219,7 +307,9 @@ export default {
                 total: 1,
                 size: 6,
                 current: 1
-            }
+            },
+            animes: [],
+            evaluate: []
         }
     },
     created () {
@@ -233,6 +323,12 @@ export default {
             })
             animeSeries.page(this.animeId, this.series.current, this.series.size).then(result => {
                 this.series = result.data
+            })
+            articles.listThree(this.animeId).then(result => {
+                this.evaluate = result.data
+            })
+            anime.page(1, 4, 'update_time', 'desc').then(result => {
+                this.animes = result.data.records
             })
         }
     }

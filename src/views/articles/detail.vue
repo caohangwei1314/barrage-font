@@ -10,7 +10,7 @@
                 <div class="title-head">
                   {{data.title}}
                 </div>
-                <div class="date">{{data.createTime | date('yyyy-MM-dd')}}</div>
+                <div class="date">{{data.date}}</div>
               </div>
               <div class="data">
                 <div class="text color-1"
@@ -65,10 +65,6 @@ export default {
     data () {
         return {
             data: {
-                id: '',
-                title: '',
-                articlesContent: '',
-                createTime: ''
             }
         }
     },
@@ -79,11 +75,8 @@ export default {
     },
     methods: {
         init () {
-            this.data.title = this.$router.currentRoute.query.title
-            this.data.createTime = this.$router.currentRoute.query.createTime
-            articles.detail(this.$router.currentRoute.params.id).then((result) => {
-                this.data.id = result.data.id
-                this.data.articlesContent = result.data.articlesContent
+            articles.detail(this.$router.currentRoute.query.id).then((result) => {
+                this.data = result.data
             })
         }
     }

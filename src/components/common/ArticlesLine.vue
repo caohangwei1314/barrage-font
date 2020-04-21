@@ -1,11 +1,11 @@
 <template>
   <div class="wp clearfixs">
     <div class="articles-line">
-      <a @click="detail(data.id,data.title,data.updateTime)"
+      <a :href="'/articles/detail?id=' + data.id"
           class="click">
         <div class="left">
           <a class="li">
-            <img :src="'https://hzrtb.oss-cn-hangzhou.aliyuncs.com/' + data.image"
+            <img :src="GLOBAL.oss + data.image"
                   class="img" />
           </a>
         </div>
@@ -72,11 +72,6 @@ export default {
     data () {
         return {
             items: {
-                id: '',
-                image: '',
-                title: '',
-                updateTime: '',
-                simpleDesc: ''
             }
         }
     },
