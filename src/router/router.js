@@ -34,7 +34,29 @@ export default new VueRouter({
         {
             path: '/account',
             name: 'account',
-            component: () => import('@/views/account/index')
+            component: () => import('@/views/account/index'),
+            children: [
+                {
+                    path: 'home',
+                    name: 'accountHome',
+                    component: () => import('@/views/account/home')
+                },
+                {
+                    path: 'vip',
+                    name: 'accountVip',
+                    component: () => import('@/views/account/vip')
+                },
+                {
+                    path: 'info',
+                    name: 'accountInfo',
+                    component: () => import('@/views/account/info')
+                },
+                {
+                    path: 'avatar',
+                    name: 'accountAvatar',
+                    component: () => import('@/views/account/avatar')
+                }
+            ]
         },
         {
             path: '/index',

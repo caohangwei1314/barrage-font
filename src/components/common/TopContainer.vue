@@ -11,7 +11,7 @@
         </a>
       </div>
       <ul class="guide fr">
-        <li class="guide-item"><a href="/account">
+        <li class="guide-item"><a href="/account/home">
           <span
             class="icon"
             :style="{backgroundImage:`url(${userCenter})`}"
