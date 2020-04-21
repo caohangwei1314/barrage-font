@@ -50,6 +50,11 @@ export default new VueRouter({
             path: '/history',
             name: 'history',
             component: () => import('@/views/history/index')
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: () => import('@/views/login/index')
         }
     ]
 })

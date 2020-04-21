@@ -2,6 +2,7 @@
 
 import axios from 'axios'
 import router from 'vue-router'
+import sotre from '@/store/index.js'
 // import store from '@/store'
 
 export const API_ROOT = 'http://localhost:8090'
@@ -11,6 +12,17 @@ const service = axios.create({
     baseURL: API_ROOT,
     timeout: 5000 // 请求超时设置
 })
+
+service.interceptors.request.use(
+    (config) => {
+        const token = sotre.token
+        config.headers.token = token
+        return config
+    },
+    (error) => {
+        return Promise.reject(error)
+    }
+)
 
 // 封装响应拦截，判断token是否过期
 service.interceptors.response.use(
