@@ -1,8 +1,9 @@
 /* eslint-disable arrow-body-style */
 
 import axios from 'axios'
-import router from 'vue-router'
+import router from '@/router/router.js'
 import sotre from '@/store/index.js'
+import { Message } from 'element-ui'
 // import store from '@/store'
 
 export const API_ROOT = 'http://localhost:8090'
@@ -15,8 +16,8 @@ const service = axios.create({
 
 service.interceptors.request.use(
     (config) => {
-        const token = sotre.token
-        config.headers.token = token
+        const token = sotre.state.token
+        config.headers['X-Token'] = token
         return config
     },
     (error) => {
@@ -48,14 +49,10 @@ service.interceptors.response.use(
                 console.error('401:未登录或Token过期')
                 // // FIXME:修改 vuex 内的登录状态，请自行修改
                 // store.commit('SET_ISLOGIN', false)
-                setTimeout(() => {
-                    router.replace({
-                        name: 'login',
-                        query: {
-                            redirect: router.currentRoute.fullPath
-                        }
-                    })
-                }, 1000)
+                Message.error({ message: '请登录' })
+                router.push({
+                    name: 'login'
+                })
                 break
 
                 // 404请求不存在

@@ -1,25 +1,68 @@
 <template>
     <div>
         <div data-v-4cbad597="" class="security-right-title"><span data-v-4cbad597="" class="security-right-title-icon"></span> <span data-v-4cbad597="" class="security-right-title-text">大会员</span> <!----></div>
-        <div id="reportVipName" class="big-name-warp report-scroll-module"><div class="big-head"><img src="https://i2.hdslb.com/bfs/face/d528237706ce53263cc82e61dc39bac9ee57297f.jpg" lazy="loaded"></div> <div class="big-name-left"><div class="big-name-top"><span class="big-user-name big-user-pick-name">怪我咯in</span> <span class="big-label">年度大会员</span></div> <div class="big-nane-bottom"><p>
+        <div id="reportVipName" class="big-name-warp report-scroll-module"><div class="big-head"><img src="https://i2.hdslb.com/bfs/face/d528237706ce53263cc82e61dc39bac9ee57297f.jpg" lazy="loaded"></div> <div class="big-name-left"><div class="big-name-top"><span class="big-user-name big-user-pick-name">{{userInfo.nickName}}</span> <span v-if="userInfo.isVip" class="big-label">年度大会员</span></div> <div class="big-nane-bottom"><p v-if="!userInfo.isVip">普通用户</p><p v-if="userInfo.isVip">
         大会员有效期至2021-04-12
         <span class="big-name-record">
           自动续费管理 &gt;
-          <div class="big-name-record-hover"><div class="big-name-record-hover-icon"></div> <p>当前是自动续费大会员</p> <p>下次扣费时间为2021-03-30</p></div></span></p></div> <div class="big-member-btn"><i style="display: none;"></i>
+          <div class="big-name-record-hover"><div class="big-name-record-hover-icon"></div> <p>当前是自动续费大会员</p> <p>下次扣费时间为2021-03-30</p></div></span></p></div><div class="big-member-btn" v-if="!userInfo.isVip"><i style="display: none;"></i>
+      开通大会员
+      <span class="voucher-tips-show" style="display: none;"></span></div><div class="big-member-btn" v-if="userInfo.isVip"><i style="display: none;"></i>
       续费大会员
       <span class="voucher-tips-show" style="display: none;"></span></div> <span class="big-gift-btn-home">赠送</span> <div id="bigMore" class="big-more-tool-btn"><i class="big-more-tool-item"></i> <i class="big-more-tool-item"></i> <i class="big-more-tool-item"></i> <div class="big-more-item-list" style="display: none;"><a target="_blank" href="//big.bilibili.com/pc/bigHistory" class="big-more-item-item"><span class="big-more-item-txt">查看开通记录</span></a> <a href="/account/big/voucher" class="big-more-item-item"><span class="big-more-item-txt">我的代金券</span></a> <a href="/account/big/myPackage" class="big-more-item-item"><span class="big-more-item-txt">卡券包</span></a></div></div></div> <!----> <div class="continuity-dialog-wrapper" style="display: none;"><div class="continuity-box"><div class="continuity-content"><div class="continuity-header">自动续费管理</div> <span class="continuity-close"></span> <div class="continuity-bottom"><ul data-v-d489e166="" class="tabs-wrapper"><li data-v-d489e166="" class="tab-normal-item active"><span data-v-d489e166="" class="tabs-normal-txt">大会员自动续期</span></li><li data-v-d489e166="" class="tab-normal-item tab-disable"><span data-v-d489e166="" class="tabs-normal-txt">电视大会员自动续期</span></li></ul> <div><div class="big-continuity-card-wrapper"><div class="big-continuity-card-item"><div class="big-continuity-card-name">连续包年首年</div> <div class="big-continuity-card-info"><div class="big-continuity-card-txt">预计扣费时间</div> <div class="big-continuity-card-txt">2021-03-30</div></div> <div class="big-continuity-card-info"><div class="big-continuity-card-txt">每次扣费金额</div> <div class="big-continuity-card-txt">148.00元</div></div> <div class="big-continuity-card-info"><div class="big-continuity-card-txt">扣费渠道</div> <div class="big-continuity-card-txt">苹果内购</div></div> <div class="big-continuity-card-txt">*扣费成功后大会员有效期增加366天*</div> <div class="big-continuity-card-btn-wrapper"><div class="big-continuity-card-btn">解约</div></div></div></div></div> <div style="display: none;"><div class="big-continuity-card-wrapper"></div></div></div></div></div></div> <div class="common-dialog-wrap" style="display: none;"><div class="common-dialog-box"><div class="common-dialog-content"><div class="dialog-close-icon"></div> <p class="common-title"></p> <p class="common-subtitle"></p> <div class="success-img"></div> <div class="close-btn btn-top">知道了</div></div></div></div> <!----> <div class="pay-dialog-wrapper" style="display: none;"><div class="pay-dialog-box"><div class="pay-dialog-content"><div class="pay-dialog-close-icon"></div> <p class="pay-dialog-title"></p>  <div class="pay-dialog-protocol" style="display: none;"><span class="pay-dialog-protocol-icon pay-dialog-protocol-icon-disable"></span> <span class="pay-dialog-protocol-txt">关注“哔哩哔哩大会员”官方账号</span></div> <div class="fail-img"></div> <div class="pay-bottom-btn"><span class="pay-left-btn pay-left-btn-alone">知道了</span> <!----></div></div></div></div></div>
       <div id="reportVipPrivilege" class="big-privilege-warp report-scroll-module"><div id="reportVipPrivilegeMore" class="big-privilege-title report-wrap-module">
     大会员特权
-    <a href="https://big.bilibili.com/pc/privilege" target="_blank" class="right-more-btn">
+    <!-- <a href="https://big.bilibili.com/pc/privilege" target="_blank" class="right-more-btn">
       更多
-      <i class="m-arrow"></i></a></div> <div id="clickPrivilegeReport" class="big-privilege-content report-wrap-module"><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/cca929463895f8d2a5d65d41e0f69a608b711539.png"></span> <p class="privilege-text">免费看</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/1870c718e3cd2a5625934d401838e67d738d4fcc.png"></span> <p class="privilege-text">超清看</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/4198eee83d94539be16f60daac277bce5f8f01dc.png"></span> <p class="privilege-text">专属挂件</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/a8144d3bbfeeaf43f3eff6741f4a7f5fcecec31c.png"></span> <p class="privilege-text">空间自主头图</p></span></div></div>
+      <i class="m-arrow"></i></a> -->
+      </div> <div id="clickPrivilegeReport" class="big-privilege-content report-wrap-module"><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/cca929463895f8d2a5d65d41e0f69a608b711539.png"></span> <p class="privilege-text">免费看</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/1870c718e3cd2a5625934d401838e67d738d4fcc.png"></span> <p class="privilege-text">超清看</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/4198eee83d94539be16f60daac277bce5f8f01dc.png"></span> <p class="privilege-text">专属挂件</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/a8144d3bbfeeaf43f3eff6741f4a7f5fcecec31c.png"></span> <p class="privilege-text">空间自主头图</p></span></div></div>
       <div id="reportVipAnime" class="big-watch-wrapper report-scroll-module" scrollshow="true"><div id="reportVipAnimeMore" class="big-watch-title report-wrap-module">
     番剧
     <a href="https://www.bilibili.com/anime/index/#season_version=-1&amp;area=-1&amp;is_finish=-1&amp;copyright=-1&amp;season_status=4%2C6&amp;season_month=-1&amp;pub_date=-1&amp;style_id=-1&amp;order=0&amp;st=1&amp;sort=0&amp;page=1" target="_blank" class="right-more-btn">
       更多
-      <i class="m-arrow"></i></a></div> <div id="accountPgcAnime" class="member-list-flex-warp report-wrap-module"><a href="https://www.bilibili.com/bangumi/play/ss32963" target="_blank" class="member-list-item"><span class="member-list-img"><img width="142" height="190" src="https://i0.hdslb.com/bfs/bangumi/image/d8a6884c2f839a5ffe5a0637608eec7910763411.png" lazy="loaded"> <span class="member-list-video-num text-nowrap">161.4万人追番</span> <span class="member-list-exclusive-icon">独家</span></span> <p class="member-list-item-text text-nowrap">公主连结Re:Dive</p> <p class="member-list-item-subtext text-nowrap">更新至第3话</p></a><a href="https://www.bilibili.com/bangumi/play/ss32982" target="_blank" class="member-list-item"><span class="member-list-img"><img width="142" height="190" src="https://i0.hdslb.com/bfs/bangumi/image/83ad052250e9a803e4ebaa47bef971cb079e0543.png" lazy="loaded"> <span class="member-list-video-num text-nowrap">594.4万人追番</span> <span class="member-list-exclusive-icon">独家</span></span> <p class="member-list-item-text text-nowrap">辉夜大小姐想让我告白？～天才们的恋爱头脑战～</p> <p class="member-list-item-subtext text-nowrap">更新至第2话</p></a><a href="https://www.bilibili.com/bangumi/play/ss33055" target="_blank" class="member-list-item"><span class="member-list-img"><img width="142" height="190" src="https://i0.hdslb.com/bfs/bangumi/image/942d7b582025b1abcb1ee6e797407d4314867b02.png" lazy="loaded"> <span class="member-list-video-num text-nowrap">136.1万人追番</span> <!----></span> <p class="member-list-item-text text-nowrap">转生成为了只有乙女游戏破灭Flag的邪恶大小姐</p> <p class="member-list-item-subtext text-nowrap">更新至第3话</p></a><a href="https://www.bilibili.com/bangumi/play/ss29325" target="_blank" class="member-list-item"><span class="member-list-img"><img width="142" height="190" src="https://i0.hdslb.com/bfs/bangumi/image/94552aaa95b2785df3dbbbad2bb664d53d38a58f.png" lazy="loaded"> <span class="member-list-video-num text-nowrap">499.9万人追番</span> <span class="member-list-exclusive-icon">独家</span></span> <p class="member-list-item-text text-nowrap">某科学的超电磁炮T</p> <p class="member-list-item-subtext text-nowrap">更新至第12话</p></a><a href="https://www.bilibili.com/bangumi/play/ss6422" target="_blank" class="member-list-item"><span class="member-list-img"><img width="142" height="190" src="https://i0.hdslb.com/bfs/bangumi/c345335f3cc395f7cfbe7e7e0a4913f9b1671fe2.jpg" lazy="loaded"> <span class="member-list-video-num text-nowrap">163.2万人追番</span> <!----></span> <p class="member-list-item-text text-nowrap">黑色四叶草</p> <p class="member-list-item-subtext text-nowrap">更新至第131话</p></a></div></div>
+      <i class="m-arrow"></i>
+    </a>
+    </div>
+    <div id="accountPgcAnime" class="member-list-flex-warp report-wrap-module">
+        <a href="https://www.bilibili.com/bangumi/play/ss32963" target="_blank" class="member-list-item" v-for="anime in animes" :key="anime.id">
+            <span class="member-list-img">
+                <img width="142" height="190" :src="GLOBAL.oss + anime.image" lazy="loaded">
+                <span class="member-list-video-num text-nowrap">{{anime.totalFollow}}人追番</span>
+                <span class="member-list-exclusive-icon">独家</span>
+            </span>
+            <p class="member-list-item-text text-nowrap">{{anime.name}}</p>
+            <p class="member-list-item-subtext text-nowrap">更新至第{{anime.updateSets}}话</p>
+        </a>
+    </div>
+    </div>
     </div>
 </template>
+
+<script>
+import * as user from '@/api/user'
+import * as anime from '@/api/anime'
+export default {
+    data () {
+        return {
+            userInfo: {},
+            animes: []
+        }
+    },
+    methods: {
+        init () {
+            user.detail().then(result => {
+                this.userInfo = result.data
+            })
+            anime.page(1, 4, 'update_time', 'desc').then(result => {
+                this.animes = result.data.records
+            })
+        }
+    },
+    created () {
+        this.init()
+    }
+}
+</script>
 
 <style lang="scss">
 .member-list-item-subtext {

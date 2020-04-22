@@ -6,6 +6,8 @@
 
 <script>
 import VueDplayerHls from '@/components/common/VueDplayerHls'
+import * as user from '@/api/user'
+import { mapMutations } from 'vuex'
 // import * as animeSeries from '@/api/animeSeries'
 export default {
     name: 'HelloWorld',
@@ -13,7 +15,8 @@ export default {
         'd-player': VueDplayerHls
     },
     props: [
-        'video'
+        'video',
+        'isVip'
     ],
     data () {
         return {
@@ -49,8 +52,29 @@ export default {
         this.init()
     },
     methods: {
+        ...mapMutations(['ALTER_DEFAULT_SWITCH_ON']),
         play () {
-            console.log('play callback')
+            if (this.isVip) {
+                user.isVip().then(result => {
+                    if (result.code === 0) {
+                        if (!result.data) {
+                            this.$message({
+                                type: 'error',
+                                message: '当前视频需要大会员才能进行观看，请前往开通大会员!'
+                            })
+                            this.ALTER_DEFAULT_SWITCH_ON(1)
+                            this.$router.push({ path: '/account/vip' })
+                        }
+                    } else {
+                        this.$message({
+                            type: 'error',
+                            message: '请登录!'
+                        })
+                        this.ALTER_DEFAULT_SWITCH_ON(1)
+                        this.$router.push({ path: '/login' })
+                    }
+                })
+            }
         },
         init () {
             // animeSeries.detail(this.$router.currentRoute.query.id).then(result => {

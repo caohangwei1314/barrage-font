@@ -1,7 +1,7 @@
 <template>
     <div class="wp clearfixs">
         <div class="video-left fl">
-            <vue-dplayer :video="video"></vue-dplayer>
+            <vue-dplayer :video="video" :isVip="currentSeries.isVip"></vue-dplayer>
             <div class="media-wrapper">
                 <h1 :title="anime.name + '：第' + currentSeries.number + '节 ' + currentSeries.title">
                     {{anime.name}}：第{{currentSeries.title}}节 {{currentSeries.title}}

@@ -58,9 +58,9 @@ export default {
     color: #FFF;
     border-color: #409EFF;
 }
-.el-button--primary{
-    background: #00a1d6!important;
-}
+// .el-button--primary{
+//     background: #00a1d6!important;
+// }
 .user-my-btn-warp {
     float: left;
     width: 789px;
