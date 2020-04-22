@@ -1,24 +1,48 @@
 <template>
     <div>
         <div data-v-4cbad597="" class="security-right-title"><span data-v-4cbad597="" class="security-right-title-icon"></span> <span data-v-4cbad597="" class="security-right-title-text">大会员</span> <!----></div>
-        <div id="reportVipName" class="big-name-warp report-scroll-module"><div class="big-head"><img src="https://i2.hdslb.com/bfs/face/d528237706ce53263cc82e61dc39bac9ee57297f.jpg" lazy="loaded"></div> <div class="big-name-left"><div class="big-name-top"><span class="big-user-name big-user-pick-name">{{userInfo.nickName}}</span> <span v-if="userInfo.isVip" class="big-label">年度大会员</span></div> <div class="big-nane-bottom"><p v-if="!userInfo.isVip">普通用户</p><p v-if="userInfo.isVip">
+        <div id="reportVipName" class="big-name-warp report-scroll-module"><div class="big-head"><el-avatar :size="48" :src="userInfo.avatar"></el-avatar> </div> <div class="big-name-left"><div class="big-name-top"><span class="big-user-name big-user-pick-name">{{userInfo.nickName}}</span> <span v-if="userInfo.isVip" class="big-label">年度大会员</span></div> <div class="big-nane-bottom"><p v-if="!userInfo.isVip">普通用户</p><p v-if="userInfo.isVip">
         大会员有效期至2021-04-12
         <span class="big-name-record">
           自动续费管理 &gt;
-          <div class="big-name-record-hover"><div class="big-name-record-hover-icon"></div> <p>当前是自动续费大会员</p> <p>下次扣费时间为2021-03-30</p></div></span></p></div><div class="big-member-btn" v-if="!userInfo.isVip"><i style="display: none;"></i>
+          <div class="big-name-record-hover"><div class="big-name-record-hover-icon"></div> <p>当前是自动续费大会员</p> <p>下次扣费时间为2021-03-30</p></div></span></p></div><div class="big-member-btn" v-if="!userInfo.isVip" @click="dialogVisible = true"><i style="display: none;"></i>
       开通大会员
-      <span class="voucher-tips-show" style="display: none;"></span></div><div class="big-member-btn" v-if="userInfo.isVip"><i style="display: none;"></i>
+      <span class="voucher-tips-show" style="display: none;"></span></div><div class="big-member-btn" v-if="userInfo.isVip" @click="dialogVisible = true"><i style="display: none;"></i>
       续费大会员
       <span class="voucher-tips-show" style="display: none;"></span></div> <span class="big-gift-btn-home">赠送</span> <div id="bigMore" class="big-more-tool-btn"><i class="big-more-tool-item"></i> <i class="big-more-tool-item"></i> <i class="big-more-tool-item"></i> <div class="big-more-item-list" style="display: none;"><a target="_blank" href="//big.bilibili.com/pc/bigHistory" class="big-more-item-item"><span class="big-more-item-txt">查看开通记录</span></a> <a href="/account/big/voucher" class="big-more-item-item"><span class="big-more-item-txt">我的代金券</span></a> <a href="/account/big/myPackage" class="big-more-item-item"><span class="big-more-item-txt">卡券包</span></a></div></div></div> <!----> <div class="continuity-dialog-wrapper" style="display: none;"><div class="continuity-box"><div class="continuity-content"><div class="continuity-header">自动续费管理</div> <span class="continuity-close"></span> <div class="continuity-bottom"><ul data-v-d489e166="" class="tabs-wrapper"><li data-v-d489e166="" class="tab-normal-item active"><span data-v-d489e166="" class="tabs-normal-txt">大会员自动续期</span></li><li data-v-d489e166="" class="tab-normal-item tab-disable"><span data-v-d489e166="" class="tabs-normal-txt">电视大会员自动续期</span></li></ul> <div><div class="big-continuity-card-wrapper"><div class="big-continuity-card-item"><div class="big-continuity-card-name">连续包年首年</div> <div class="big-continuity-card-info"><div class="big-continuity-card-txt">预计扣费时间</div> <div class="big-continuity-card-txt">2021-03-30</div></div> <div class="big-continuity-card-info"><div class="big-continuity-card-txt">每次扣费金额</div> <div class="big-continuity-card-txt">148.00元</div></div> <div class="big-continuity-card-info"><div class="big-continuity-card-txt">扣费渠道</div> <div class="big-continuity-card-txt">苹果内购</div></div> <div class="big-continuity-card-txt">*扣费成功后大会员有效期增加366天*</div> <div class="big-continuity-card-btn-wrapper"><div class="big-continuity-card-btn">解约</div></div></div></div></div> <div style="display: none;"><div class="big-continuity-card-wrapper"></div></div></div></div></div></div> <div class="common-dialog-wrap" style="display: none;"><div class="common-dialog-box"><div class="common-dialog-content"><div class="dialog-close-icon"></div> <p class="common-title"></p> <p class="common-subtitle"></p> <div class="success-img"></div> <div class="close-btn btn-top">知道了</div></div></div></div> <!----> <div class="pay-dialog-wrapper" style="display: none;"><div class="pay-dialog-box"><div class="pay-dialog-content"><div class="pay-dialog-close-icon"></div> <p class="pay-dialog-title"></p>  <div class="pay-dialog-protocol" style="display: none;"><span class="pay-dialog-protocol-icon pay-dialog-protocol-icon-disable"></span> <span class="pay-dialog-protocol-txt">关注“哔哩哔哩大会员”官方账号</span></div> <div class="fail-img"></div> <div class="pay-bottom-btn"><span class="pay-left-btn pay-left-btn-alone">知道了</span> <!----></div></div></div></div></div>
+      <el-dialog
+        title="开通大会员"
+        :visible.sync="dialogVisible"
+        width="570px"
+        :before-close="handleClose">
+        <div class="bili-pay-box-wrapper pay-box-type-1 clearfixs">
+            <div class="pay-for-money-item pay-for-money-item-active">
+                <p class="pay-for-money-price">¥168/年<i class="pay-for-money-org-price" style="display: none;">¥68</i></p>
+                <p class="pay-for-money-text">年度大会员</p>
+            </div>
+            <div class="pay-for-money-item">
+                <p class="pay-for-money-price">¥68/季<i class="pay-for-money-org-price" style="display: none;">¥68</i></p>
+                <p class="pay-for-money-text">季度大会员</p>
+            </div>
+            <div class="pay-for-money-item">
+                <p class="pay-for-money-price">¥25/季<i class="pay-for-money-org-price" style="display: none;">¥68</i></p>
+                <p class="pay-for-money-text">月度大会员</p>
+            </div>
+        </div>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="dialogVisible = false">取 消</el-button>
+            <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+        </span>
+        </el-dialog>
       <div id="reportVipPrivilege" class="big-privilege-warp report-scroll-module"><div id="reportVipPrivilegeMore" class="big-privilege-title report-wrap-module">
     大会员特权
     <!-- <a href="https://big.bilibili.com/pc/privilege" target="_blank" class="right-more-btn">
       更多
       <i class="m-arrow"></i></a> -->
-      </div> <div id="clickPrivilegeReport" class="big-privilege-content report-wrap-module"><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/cca929463895f8d2a5d65d41e0f69a608b711539.png"></span> <p class="privilege-text">免费看</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/1870c718e3cd2a5625934d401838e67d738d4fcc.png"></span> <p class="privilege-text">超清看</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/4198eee83d94539be16f60daac277bce5f8f01dc.png"></span> <p class="privilege-text">专属挂件</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="http://i0.hdslb.com/bfs/vip/a8144d3bbfeeaf43f3eff6741f4a7f5fcecec31c.png"></span> <p class="privilege-text">空间自主头图</p></span></div></div>
+      </div> <div id="clickPrivilegeReport" class="big-privilege-content report-wrap-module"><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="../../assets/comic/suoluetu/cca929463895f8d2a5d65d41e0f69a608b711539.png"></span> <p class="privilege-text">免费看</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="../../assets/comic/suoluetu/1870c718e3cd2a5625934d401838e67d738d4fcc.png"></span> <p class="privilege-text">超清看</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="../../assets/comic/suoluetu/2dac1a2c649407dc8ce5f899f244d3aed557c458.png"></span> <p class="privilege-text">抢先看</p></span><span target="_blank" class="big-privilege-item"><span class="privilege"><img src="../../assets/comic/suoluetu/f50ed845a94ac63adaa28f47716965269f9a9bdc.png"></span> <p class="privilege-text">粉色昵称</p></span></div></div>
       <div id="reportVipAnime" class="big-watch-wrapper report-scroll-module" scrollshow="true"><div id="reportVipAnimeMore" class="big-watch-title report-wrap-module">
-    番剧
-    <a href="https://www.bilibili.com/anime/index/#season_version=-1&amp;area=-1&amp;is_finish=-1&amp;copyright=-1&amp;season_status=4%2C6&amp;season_month=-1&amp;pub_date=-1&amp;style_id=-1&amp;order=0&amp;st=1&amp;sort=0&amp;page=1" target="_blank" class="right-more-btn">
+    番剧推荐
+    <a href="/index" target="_blank" class="right-more-btn">
       更多
       <i class="m-arrow"></i>
     </a>
@@ -26,7 +50,7 @@
     <div id="accountPgcAnime" class="member-list-flex-warp report-wrap-module">
         <a href="https://www.bilibili.com/bangumi/play/ss32963" target="_blank" class="member-list-item" v-for="anime in animes" :key="anime.id">
             <span class="member-list-img">
-                <img width="142" height="190" :src="GLOBAL.oss + anime.image" lazy="loaded">
+                <img width="142" height="190" :src="anime.image" lazy="loaded">
                 <span class="member-list-video-num text-nowrap">{{anime.totalFollow}}人追番</span>
                 <span class="member-list-exclusive-icon">独家</span>
             </span>
@@ -45,16 +69,21 @@ export default {
     data () {
         return {
             userInfo: {},
-            animes: []
+            animes: [],
+            dialogVisible: false
         }
     },
     methods: {
         init () {
             user.detail().then(result => {
                 this.userInfo = result.data
+                this.userInfo.avatar = this.GLOBAL.oss + this.userInfo.avatar
             })
             anime.page(1, 4, 'update_time', 'desc').then(result => {
                 this.animes = result.data.records
+                for (let i = 0; i < this.animes.length; i++) {
+                    this.animes[i].image = this.GLOBAL.oss + this.animes[i].image
+                }
             })
         }
     },
@@ -65,6 +94,184 @@ export default {
 </script>
 
 <style lang="scss">
+.pay-for-money-item {
+    width:160px;
+    float:left;
+    margin:0 auto;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #ccd0d7;
+    padding: 1px;
+    border-radius: 4px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 66px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.pay-box-type-1 {
+    width: 570px;
+}
+.bili-pay-box-default {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 480px;
+    padding: 0 30px;
+    margin-bottom: 12px;
+    -webkit-transition: height 0.3 ease-in-out;
+    transition: height 0.3 ease-in-out;
+    overflow: hidden;
+}
+.pay-for-money-bottom-text {
+    margin-top: 8px;
+    font-family: MicrosoftYaHei;
+    font-size: 11px;
+    color: #ccd0d7;
+}
+.pay-for-money-remark {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #99a2aa;
+}
+.pay-for-money-text {
+    font-size: 12px;
+    color: #99a2aa;
+    text-align: center;
+}
+.pay-for-money-org-price {
+    font-size: 12px;
+    color: #99a2aa;
+    text-decoration: line-through;
+    vertical-align: middle;
+}
+.pay-for-money-price {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #222222;
+    text-align: center;
+}
+.pay-for-money-item-active .pay-for-money-price {
+    color: #00a1d6;
+}
+.pay-for-money-dis {
+    position: absolute;
+    top: -12px;
+    right: -2px;
+    background: #f25d8e;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 100px;
+    padding: 1px 4px;
+    z-index: 100;
+}
+.pay-for-money-item-active {
+    padding: 0px;
+    border: 2px solid #00a1d6;
+}
+.pay-for-money-list {
+    width: 520px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.bili-pay-txt-default {
+    padding: 14px 0 20px 0;
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    color: #212121;
+}
+.bili-pay-txt-default {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.bili-pay-tabs-item-span {
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    color: #99a2aa;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #ffffff;
+}
+.bili-pay-tabs-item-span-active {
+    color: #00a1d6;
+    border-color: #00a1d6;
+}
+.bili-pay-tabs-item {
+    cursor: pointer;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    text-align: center;
+    padding-top: 16px;
+    padding-bottom: 10px;
+}
+.bili-pay-tabs-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.bili-pay-box-default {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 480px;
+    padding: 0 30px;
+    margin-bottom: 12px;
+    -webkit-transition: height 0.3 ease-in-out;
+    transition: height 0.3 ease-in-out;
+    overflow: hidden;
+}
+.bili-pay-msg-icon {
+    display: block;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top: 10px;
+    left: 14.5px;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAAXNSR0IArs4c6QAAA/1JREFUWAntWE1oE0EUnjdbSusvVDQb0bamrYJFPFT8QUFRPOhF8KCexNKDB+tf0kARUakHFZNK/QGLIBWqgoLgD4iCWhXRgx4UBRVtUkFIUtoi9m+T7Ixv1NUQZ9fdbaqXDYSZfe973/vydt7MbgjxPl4FvAp4FfAq4FXAQQXAAdY2lHMOqWhlkBNoJJxkgEKLLxTrtE1gASy44NSZ2klseKiTE74hNy+QogVq+OPrXJubOXUTZBaTPDE3wEYGn+WLFXgO+nqzOCf2IidgK2wiGljDdO0KLoEyGQ4rUyKzG7aByJwKjbD9hMItNRi/btjzx4IIThyv3EW43opilfwEdq4Tx+fNGeVaF2LLgfGlOI6PYH6ltjj5aegsNlk9inX1SZ6srmJp7QHhfDY2FAOiHLUicl3h1JlKNdkzdA3X6zKrBFa+VGtVta5lHiBmlhDLKTSooe6LVjGumq63NbCIjfDnYxLbFqhhLNtliAVK6/2heIeVWOH7a4XFNlWqa6UG0XBGX5fVWTteWzaRgZeNorIsne3CVTQTgOgAdJvdfdpUMDbSFkzWgttU9SCeALLEbm2M6WFDLKFkqy8Yu2SXSyo4GanYyDi//J3EZTNZCaAUOpnOA7iFnbbawmQcUsGMkH0ycKFsM4Kxx8i11g2fvOk4LHBD9i9ipBXGg7R4PJMnopWbCSPncJeZLMsjGpET2u5viu3I95sIzocV+pqvwNaQihWZOJ6YQLh0yfwfwWxqMyhfngKDKfJSAGMKvyvzyQUD6Td7iJGROLWp4VdDGGN7K8vllzYdEHiUCyr0nPNDtDdSVSdGp9zSAFCKQ4RAr1Myu/hUtONIlmefJyId98VJajdO4KSCfXvfd0+E4vkEoAUAbmLX3hNfxA84ITfDYlN9/uHjK/WRwdtORDs6cvvbAuVaRr+I63uFmRgzOwU46GuKtxj+RLTiFGekUVyjiCdKWcm66Q3vvhp+s1FaYTNw2e7uT2r54lXoPyweB81wduxqqGcn3r02gcUtbrner93pO1ltsmv8ZnQkWITBpqu6P9xzQFFgNS6Tn7f2N6GTmdoU34OiT4gY8aiaSWfv9rcHplpxOBZskE0Pxh9OKCldiAlvGDY3I4oOYlxExOKbyxLtKztvxeNasCCd0vi2DxPi6zzdiQ2qWSWy8uEdC+MT3DGBwRNufCqcK8Afjp3GplqCot/m2p3MfaF4s6IU1fjKJ1n+HTCmCucKwjeGl+rkaXW4ROS3FEgyFy+bzwh+/ACb3qRlPsNWMMGCELa/GMYl0oB/TW3B0/KLkQR/RIrS0jGt9V9cxqTQY++peTP19Gg9Ci9ilFzw743HC53D4/Mq4FXAq8CfFfgGNkFHxRkcCmAAAAAASUVORK5CYII=) no-repeat;
+    background-size: 100% 100%;
+}
+.text-nowrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.bili-pay-message-wrapper {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 14.5px 0 40px;
+    height: 40px;
+    background: #fff1cf;
+    border-bottom: 1px solid #fddfa3;
+    border-top: 1px solid #fddfa3;
+    font-size: 14px;
+    color: #e78b1f;
+    line-height: 38px;
+    cursor: pointer;
+}
+.hide {
+    display: none;
+}
 .member-list-item-subtext {
     text-align: left;
     margin-top: 8px;

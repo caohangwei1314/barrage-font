@@ -21,3 +21,11 @@ export function isVip () {
         method: 'get'
     })
 }
+
+export function updateImage (data) {
+    return request({
+        url: '/user/update/image',
+        method: 'post',
+        data
+    })
+}

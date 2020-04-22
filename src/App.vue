@@ -50,4 +50,7 @@ li {
 .clearfixs{
   overflow:hidden
 }
+.el-button--primary span{
+    color: #FFF;
+}
 </style>
