@@ -8,6 +8,14 @@ export function login (data) {
     })
 }
 
+export function register (data) {
+    return request({
+        url: '/user/register',
+        method: 'post',
+        data
+    })
+}
+
 export function detail () {
     return request({
         url: '/user/detail',
@@ -27,5 +35,20 @@ export function updateImage (data) {
         url: '/user/update/image',
         method: 'post',
         data
+    })
+}
+
+export function updateBalance (data) {
+    return request({
+        url: '/user/update/balance',
+        method: 'post',
+        data
+    })
+}
+
+export function userTransaction () {
+    return request({
+        url: '/user/transaction/record',
+        method: 'get'
     })
 }

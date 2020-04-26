@@ -29,6 +29,7 @@ export default {
   margin: 0;
   padding: 0;
   color: #000;
+  font-family: MicrosoftYaHei;
 }
 .fl {
   float: left;

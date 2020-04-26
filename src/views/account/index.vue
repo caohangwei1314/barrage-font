@@ -20,17 +20,14 @@
                         </span>
                     </li>
                     <!-- <li @click="clickOn(2)" v-bind:class="{on:switchOn === 2}" data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-2"></i> <span data-v-ee13a7d2="" class="security-nav-name">会员积分</span></li> -->
-                    <li @click="clickOn(2)" v-bind:class="{on:switchOn === 2}" data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-3"></i> <span data-v-ee13a7d2="" class="security-nav-name">我的信息</span></li>
-                    <li @click="clickOn(3)" v-bind:class="{on:switchOn === 3}" data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-4"></i> <span data-v-ee13a7d2="" class="security-nav-name">我的头像</span></li>
-                    <li data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-5"></i> <span data-v-ee13a7d2="" class="security-nav-name">我的勋章</span></li>
-                    <li data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-6"></i> <span data-v-ee13a7d2="" class="security-nav-name">账号安全</span></li>
-                    <li data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-7"></i> <span data-v-ee13a7d2="" class="security-nav-name">黑名单管理</span></li>
-                    <li data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-8"></i> <span data-v-ee13a7d2="" class="security-nav-name">我的硬币</span></li>
-                    <li data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-9"></i> <span data-v-ee13a7d2="" class="security-nav-name">我的记录</span></li>
-                    <li data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-10"></i> <span data-v-ee13a7d2="" class="security-nav-name">实名认证</span></li>
-                    <li data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-11"></i> <span data-v-ee13a7d2="" class="security-nav-name">邀请注册</span></li>
+                    <!-- <li @click="clickOn(2)" v-bind:class="{on:switchOn === 2}" data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-3"></i> <span data-v-ee13a7d2="" class="security-nav-name">我的信息</span></li> -->
+                    <li @click="clickOn(2)" v-bind:class="{on:switchOn === 2}" data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-4"></i> <span data-v-ee13a7d2="" class="security-nav-name">我的头像</span></li>
+                    <li @click="clickOn(3)" v-bind:class="{on:switchOn === 3}" data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-5"></i> <span data-v-ee13a7d2="" class="security-nav-name">我的视频</span></li>
+                    <li @click="clickOn(4)" v-bind:class="{on:switchOn === 4}" data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-11"></i> <span data-v-ee13a7d2="" class="security-nav-name">我的评论</span></li>
+                    <li @click="clickOn(5)" v-bind:class="{on:switchOn === 5}" data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-8"></i> <span data-v-ee13a7d2="" class="security-nav-name">我的硬币</span></li>
+                    <li @click="clickOn(6)" v-bind:class="{on:switchOn === 6}" data-v-ee13a7d2="" class="security-list"><i data-v-ee13a7d2="" class="security-icon icon-9"></i> <span data-v-ee13a7d2="" class="security-nav-name">交易明细</span></li>
                 </ul>
-                <ul data-v-ee13a7d2="" id="securityOutLink" class="security-ul report-wrap-module"><li data-v-ee13a7d2="" class="security-list-jump"><a data-v-ee13a7d2="" href="//space.bilibili.com" target="_blank" class="security-list-link-jump">
+                <!-- <ul data-v-ee13a7d2="" id="securityOutLink" class="security-ul report-wrap-module"><li data-v-ee13a7d2="" class="security-list-jump"><a data-v-ee13a7d2="" href="//space.bilibili.com" target="_blank" class="security-list-link-jump">
                     个人空间
                     <i data-v-ee13a7d2="" class="security-list-jump-icon"></i></a></li><li data-v-ee13a7d2="" class="security-list-jump"><a data-v-ee13a7d2="" href="https://pay.bilibili.com/bb_balance.html" target="_blank" class="security-list-link-jump">
                     我的钱包
@@ -39,7 +36,7 @@
                     <i data-v-ee13a7d2="" class="security-list-jump-icon"></i></a></li><li data-v-ee13a7d2="" class="security-list-jump"><a data-v-ee13a7d2="" href="//link.bilibili.com/p/center/index" target="_blank" class="security-list-link-jump">
                     直播中心
                     <i data-v-ee13a7d2="" class="security-list-jump-icon"></i></a></li>
-                </ul>
+                </ul> -->
             </div>
             <div class="security-right">
                 <router-view></router-view>
@@ -680,10 +677,19 @@ export default {
                 this.$router.push({ path: '/account/vip' })
                 break
             case 2:
-                this.$router.push({ path: '/account/info' })
+                this.$router.push({ path: '/account/avatar' })
                 break
             case 3:
-                this.$router.push({ path: '/account/avatar' })
+                this.$router.push({ path: '/account/video' })
+                break
+            case 4:
+                this.$router.push({ path: '/account/articles' })
+                break
+            case 5:
+                this.$router.push({ path: '/account/coin' })
+                break
+            case 6:
+                this.$router.push({ path: '/account/record' })
                 break
             default:
                 break

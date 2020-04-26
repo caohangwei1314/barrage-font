@@ -27,27 +27,19 @@ export default {
                     checked: false
                 },
                 {
-                    name: '连载动画',
-                    checked: false
-                },
-                {
-                    name: '完结动画',
-                    checked: false
-                },
-                {
-                    name: '资讯',
-                    checked: false
-                },
-                {
-                    name: '官方延伸',
-                    checked: false
-                },
-                {
                     name: '新番时间表',
                     checked: false
                 },
                 {
                     name: '番剧索引',
+                    checked: false
+                },
+                {
+                    name: '视频资讯',
+                    checked: false
+                },
+                {
+                    name: '投稿视频',
                     checked: false
                 }
             ]
@@ -63,14 +55,14 @@ export default {
             case 0:
                 this.$router.push({ name: 'home' })
                 break
-            case 3:
-                this.$router.push({ name: 'articles' })
-                break
-            case 5:
+            case 1:
                 this.$router.push({ name: 'timeline' })
                 break
-            case 6:
+            case 2:
                 this.$router.push({ name: 'index' })
+                break
+            case 3:
+                this.$router.push({ name: 'articles' })
                 break
             default:
                 break

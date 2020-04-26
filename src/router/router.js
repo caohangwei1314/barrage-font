@@ -55,6 +55,36 @@ export default new VueRouter({
                     path: 'avatar',
                     name: 'accountAvatar',
                     component: () => import('@/views/account/avatar')
+                },
+                {
+                    path: 'coin',
+                    name: 'accountCoin',
+                    component: () => import('@/views/account/coin')
+                },
+                {
+                    path: 'record',
+                    name: 'accountRecord',
+                    component: () => import('@/views/account/record')
+                },
+                {
+                    path: 'articles',
+                    name: 'accountArticles',
+                    component: () => import('@/views/account/articles')
+                },
+                {
+                    path: 'video',
+                    name: 'accountVideo',
+                    component: () => import('@/views/account/video')
+                },
+                {
+                    path: 'articles/edit',
+                    name: 'accountArticlesEdit',
+                    component: () => import('@/views/account/articlesEdit')
+                },
+                {
+                    path: 'video/edit',
+                    name: 'accountVideoEdit',
+                    component: () => import('@/views/account/videoEdit')
                 }
             ]
         },
@@ -77,6 +107,11 @@ export default new VueRouter({
             path: '/login',
             name: 'login',
             component: () => import('@/views/login/index')
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: () => import('@/views/register/index')
         }
     ]
 })

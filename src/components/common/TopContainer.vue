@@ -66,7 +66,7 @@
 export default {
     data () {
         return {
-            logo: require('assets/top/logo.jpg'),
+            logo: require('assets/top/logo.png'),
             iconCollections: require('assets/top/collection.png'),
             iconUpload: require('assets/top/upload.png'),
             history: require('assets/top/history.png'),

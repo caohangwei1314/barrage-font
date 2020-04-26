@@ -21,11 +21,11 @@
                     </div>
                 </div>
                 <div class="media-info clearfix report-wrap-module">
-                    <a href="//www.bilibili.com/bangumi/media/md28222061/" target="_blank" class="media-cover">
+                    <a :href="'/anime?id=' + anime.id" target="_blank" class="media-cover">
                         <img :src="GLOBAL.oss + anime.image" alt="">
                     </a>
                     <div class="media-right">
-                        <a href="//www.bilibili.com/bangumi/media/md28222061/" target="_blank" :title="anime.name" class="media-title">
+                        <a :href="'/anime?id=' + anime.id" target="_blank" :title="anime.name" class="media-title">
                             {{anime.name}}
                         </a>
                         <div class="media-count">
@@ -36,7 +36,7 @@
                             <span class="pub-info">已完结, 全{{anime.count}}话</span>
                             <a href="//www.bilibili.com/video/BV1fE411c7D8/" target="_blank" class="av-link">{{anime.id}}</a>
                         </div>
-                        <a href="//www.bilibili.com/bangumi/media/md28222061/" target="_blank" class="media-desc webkit-ellipsis">
+                        <a :href="'/anime?id=' + anime.id" target="_blank" class="media-desc webkit-ellipsis">
                             <span class="absolute">
                                 {{anime.description}}
                             </span>
@@ -54,7 +54,7 @@
                 <div class="review-module report-wrap-module report-scroll-module">
                     <div class="module-title clearfix">
                         <h4>点评</h4>
-                        <a href="//www.bilibili.com/bangumi/media/md28222061/" target="_blank" class="more-link">查看全部</a>
+                        <a :href="'/anime?id=' + anime.id" target="_blank" class="more-link">查看全部</a>
                     </div>
                     <div class="review-list">
                         <div class="review-item" v-for="item in evaluate" :key="item.id">
@@ -62,10 +62,7 @@
                                 <div class="review-body">
                                     <div class="review-header clearfix">
                                         <a href="//space.bilibili.com/2908810/" target="_blank" class="review-author is-vip">{{item.author}}</a>
-                                        <ul class="review-star clearfix">
-                                            <li v-for="itemChild in parseInt(item.evaluateScore / 2)" :key="itemChild"><!----> <i class="iconfont icon-star-full"></i></li>
-                                            <li v-for="itemChild in parseInt((10-item.evaluateScore) / 2)" :key="itemChild"><i class="iconfont icon-star-empty"></i> <!----></li>
-                                        </ul>
+                                        <div style="color: #ffa726;float:right">{{item.evaluateScore}}分</div>
                                     </div>
                                     <div class="review-title">
                                         {{item.title}}

@@ -167,28 +167,24 @@
                                         <h4>点评</h4>
                                         <div class="rate-wrapper clearfix">
                                             <div class="btn-go-write">
-                                                <i class="icon-write">
+                                                <!-- <i class="icon-write">
                                                     <b class="path1"></b>
                                                     <b class="path2"></b>
                                                     <b class="path3"></b>
-                                                </i>
+                                                </i> -->
                                                 去写点评
                                             </div>
                                         </div>
-                                        <div class="btn-more-review">查看全部点评</div>
+                                        <div class="btn-more-review"><a href="/articles">查看全部点评</a></div>
                                     </div>
                                     <div class="bangumi-media-body clearfix">
                                         <ul class="bangumi-review-list clearfix">
                                             <li v-for="item in evaluate" :key="item.id" class="bangumi-review-item">
                                                 <div class="item-header">
                                                     <a href="//space.bilibili.com/8386200" target="_blank" class="author-name">{{item.author}}</a>
-                                                    <ul class="item-star-wrapper clearfix">
-                                                        <li v-for="itemChild in parseInt(item.evaluateScore / 2)" :key="itemChild" class="icon-star icon-star-light"><!----></li>
-                                                        <!-- <li class="icon-star icon-star-light"></li>
-                                                        <li class="icon-star icon-star-light"></li>
-                                                        <li class="icon-star icon-star-light"></li>
-                                                        <li class="icon-star icon-star-light"></li> -->
-                                                    </ul> <!---->
+                                                    <div class="item-star-wrapper">
+                                                        {{item.evaluateScore}}分
+                                                    </div>
                                                 </div>
                                                 <a :href="'/articles/detail?id=' + item.id" target="_blank">
                                                     <div class="long-title">{{item.title}}</div>
@@ -771,12 +767,9 @@ export default {
     -webkit-line-clamp: 2;
 }
 .bangumi-review-item .item-header .item-star-wrapper {
-    position: relative;
-    display: block;
-    height: 14px;
-    padding-top: 2px;
-    float: left;
-    margin-left: 8px;
+    font-size: 15px;
+    float: right;
+    color: #ffa726;
 }
 .bangumi-review-item .item-header .author-name, .bangumi-review-item .item-header .media-name {
     display: block;
@@ -860,14 +853,14 @@ export default {
     background-repeat: no-repeat;
     font-size: 12px;
 }
-.bangumi-review-item .item-header .item-star-wrapper {
-    position: relative;
-    display: block;
-    height: 14px;
-    padding-top: 2px;
-    float: left;
-    margin-left: 8px;
-}
+// .bangumi-review-item .item-header .item-star-wrapper {
+//     position: relative;
+//     display: block;
+//     height: 14px;
+//     padding-top: 2px;
+//     float: left;
+//     margin-left: 8px;
+// }
 .bangumi-review-item .item-header .author-name, .bangumi-review-item .item-header .media-name {
     display: block;
     float: left;

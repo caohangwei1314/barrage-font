@@ -1,5 +1,5 @@
 <template>
-  <div class="wp clearfixs">
+  <div class="wp clearfixs" style="margin-bottom:30px">
     <div class="articles-line">
       <a :href="'/articles/detail?id=' + data.id"
           class="click">

@@ -3,7 +3,7 @@
         <banner-container />
         <div class="wp">
             <div class="account-form">
-                <div class="active">密码登陆</div>
+                <div class="active">账号注册</div>
                 <div class="account-account">
                     <div><el-input v-model="login.account" placeholder="你的账号" @change="tipsLogin()" :class="{blur:control.account}"></el-input></div>
                 </div>
@@ -12,9 +12,12 @@
                     <div><el-input placeholder="密码" v-model="login.password" show-password @change="tipsPass()" :class="{blur:control.password}"></el-input></div>
                 </div>
                 <div class="text clearfix"><p class="tips" v-if="control.password" >喵，你没输入密码么？</p></div>
-                <div class="account-btn">
-                    <div class="login"><el-button type="primary" class=" btn" @click="userLogin()">登陆</el-button></div>
-                    <div class="register"><el-button @click="goRegister()" class=" btn">快速注册</el-button></div>
+                <div class="account-password">
+                    <div><el-input placeholder="确认密码" v-model="login.rePassword" show-password @change="tipsRePass()" :class="{blur:control.rePassword}"></el-input></div>
+                </div>
+                <div class="text clearfix"><p class="tips" v-if="control.rePassword" >喵，你没输入密码么？</p></div>
+                <div @click="userRegister" class="account-btn">
+                    <div class="register"><el-button class=" btn">注册</el-button></div>
                 </div>
             </div>
         </div>
@@ -30,11 +33,13 @@ export default {
         return {
             login: {
                 account: '',
-                password: ''
+                password: '',
+                rePassword: ''
             },
             control: {
                 account: false,
-                password: false
+                password: false,
+                rePassword: false
             }
         }
     },
@@ -57,16 +62,43 @@ export default {
                 this.control.password = true
             }
         },
-        userLogin () {
-            user.login(this.login).then(result => {
+        tipsRePass () {
+            if (this.login.rePassword !== '') {
+                this.control.rePassword = false
+            } else {
+                this.control.rePassword = true
+            }
+        },
+        userRegister () {
+            if (this.login.account === '' || this.login.password === '' || this.login.rePassword === '') {
+                this.$message({
+                    type: 'error',
+                    message: '输入信息不能为空!'
+                })
+            }
+            if (this.login.password !== this.rePassword) {
+                this.$message({
+                    type: 'error',
+                    message: '密码请输入一致!'
+                })
+            }
+            user.register(this.login).then(result => {
                 if (result.code === 0) {
                     this.ALTER_USER_TOKEN(result.data)
-                    this.$router.go(-1)
+                    this.$message({
+                        type: 'success',
+                        message: '注册成功!'
+                    })
+                    setTimeout(() => {
+                        this.$router.push({ path: '/' })
+                    }, 1000)
+                } else {
+                    this.$message({
+                        type: 'error',
+                        message: '注册失败!'
+                    })
                 }
             })
-        },
-        goRegister () {
-            this.$router.push({ path: '/register' })
         }
     }
 }

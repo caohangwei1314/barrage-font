@@ -32,7 +32,7 @@
         <div class="el-form-item__content">
             <div class="padding-dom"></div>
             <div class="user-my-btn-warp">
-                <el-button type="primary">主要按钮</el-button>
+                <el-button type="primary">保存</el-button>
             </div>
         </div>
     </div>
