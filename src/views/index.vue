@@ -14,17 +14,17 @@
         </div>
         <ul style="height:315px;">
           <li v-for="item in items" :key="item.id" class="timeline-item">
-            <a class="preview">
+            <a :href="'/play?id=' + item.id + '&animeId=' + item.animeId + '&video=' + item.videoUrl" class="preview">
               <div class="common-lazy-img">
-                <img :src="item.url">
+                <img :src="GLOBAL.oss + item.image">
               </div>
             </a>
             <div class="item-right">
               <p class="t">
-                <a>{{ item.title }}</a>
+                <a :href="'/play?id=' + item.id + '&animeId=' + item.animeId + '&video=' + item.videoUrl">{{ item.title }}</a>
               </p>
               <p class="num">
-                更新至<a>{{ item.update }}</a>
+                更新至<a :href="'/play?id=' + item.id + '&animeId=' + item.animeId + '&video=' + item.videoUrl">{{ item.number }}话</a>
               </p>
             </div>
           </li>
@@ -35,18 +35,22 @@
           <h3>我的追番</h3>
           <a href="//space.bilibili.com/13124563/bangumi" target="_blank" class="follow-more">更多<i class="icon" /></a>
         </div>
+
         <div class="follow-list reduce">
+          <div v-if="this.datas === null" class="highlight">登陆后可查看哦~~~</div>
+          <div v-if="this.datas === []" class="highlight">暂无追番，赶紧去找找吧~~~</div>
           <div v-for="item in datas" :key="item.id" class="follow-item clearfix">
-            <a href="//localhost:8080/play" target="_blank" :title="item.title" class="follow-cover">
+            <a :href="'/play?id=' + item.id + '&animeId=' + item.animeId + '&video=' + item.videoUrl" target="_blank" :title="item.title" class="follow-cover">
               <div class="bangumi-home-lazy-img">
-                <img :alt="item.title" :src="item.url" height="60" style="margin-top: -30px;" lazy="loaded">
+                <img :alt="GLOBAL.oss + item.image" :src="GLOBAL.oss + item.image" height="60" style="margin-top: -30px;" lazy="loaded">
               </div>
             </a>
             <div class="details">
-              <a href="//localhost:8080/play" target="_blank" :title="item.title" class="season-title">
+              <a :href="'/play?id=' + item.id + '&animeId=' + item.animeId + '&video=' + item.videoUrl" target="_blank" :title="item.title" class="season-title">
                 <span>{{item.title}}</span>
               </a>
-              <div class="ep-intro">全25话</div>
+              <!-- <div class="ep-intro">全{{item.number}}话</div> -->
+              <div class="ep-info highlight">更新至第{{item.number}}话</div>
             </div>
           </div>
         </div>
@@ -60,6 +64,8 @@
 import bannerContainer from '@/components/common/BannerContainer'
 import navContainer from '@/components/common/NavContainer'
 import CarouselContainer from '@/components/common/CarouselContainer'
+import * as anime from '@/api/anime'
+import * as user from '@/api/user'
 
 export default {
     components: {
@@ -67,8 +73,23 @@ export default {
         navContainer,
         CarouselContainer
     },
+    methods: {
+        init () {
+            anime.recentUpdate().then(result => {
+                this.items = result.data
+            })
+            user.userFollow(this.limit, this.size).then(result => {
+                this.datas = result.data
+            })
+        }
+    },
+    created () {
+        this.init()
+    },
     data () {
         return {
+            limit: 1,
+            size: 4,
             carouselData: [
                 require('@/assets/carousel/1.jpg'),
                 require('@/assets/carousel/2.png'),
@@ -102,73 +123,73 @@ export default {
                 {
                     id: '1',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 },
                 {
                     id: '2',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 },
                 {
                     id: '3',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 },
                 {
                     id: '4',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 },
                 {
                     id: '5',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 },
                 {
                     id: '6',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 },
                 {
                     id: '7',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 },
                 {
                     id: '8',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 },
                 {
                     id: '9',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 },
                 {
                     id: '10',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 },
                 {
                     id: '11',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 },
                 {
                     id: '12',
                     title: '智龙迷城',
-                    update: '104话',
+                    number: '104话',
                     url: require('@/assets/comic/suoluetu/lc.jpg')
                 }
             ]
@@ -177,6 +198,9 @@ export default {
 }
 </script>
 <style lang="scss">
+.highlight {
+    color: #fb7299;
+}
 .index{
   height: 708px;
   position: relative;

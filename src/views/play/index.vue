@@ -1,7 +1,7 @@
 <template>
     <div class="wp clearfixs">
         <div class="video-left fl">
-            <vue-dplayer :video="video" :isVip="currentSeries.isVip"></vue-dplayer>
+            <vue-dplayer :video="video" :isVip="currentSeries.isVip" :danmaku="danmaku"></vue-dplayer>
             <div class="media-wrapper">
                 <h1 :title="anime.name + '：第' + currentSeries.number + '节 ' + currentSeries.title">
                     {{anime.name}}：第{{currentSeries.title}}节 {{currentSeries.title}}
@@ -117,6 +117,7 @@ export default {
         return {
             id: 0,
             animeId: 0,
+            danmaku: {},
             video: {
                 url: ''
             },
@@ -162,6 +163,8 @@ export default {
             this.id = this.$router.currentRoute.query.id
             this.animeId = this.$router.currentRoute.query.animeId
             this.video.url = this.GLOBAL.oss + this.$router.currentRoute.query.video
+            this.danmaku.id = this.$router.currentRoute.query.animeId
+            this.danmaku.api = 'http://localhost:8090/'
             anime.detail(this.animeId).then(result => {
                 this.anime = result.data
             })

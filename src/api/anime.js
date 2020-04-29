@@ -13,3 +13,10 @@ export function detail (id) {
         method: 'get'
     })
 }
+
+export function recentUpdate () {
+    return request({
+        url: '/anime/series/recent/update',
+        method: 'get'
+    })
+}

@@ -52,3 +52,10 @@ export function userTransaction () {
         method: 'get'
     })
 }
+
+export function userFollow (limit, size) {
+    return request({
+        url: '/user/follow?limit=' + limit + '&size=' + size,
+        method: 'get'
+    })
+}
