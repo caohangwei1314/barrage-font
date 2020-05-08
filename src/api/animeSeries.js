@@ -13,3 +13,10 @@ export function detail (id) {
         method: 'get'
     })
 }
+
+export function timeLine () {
+    return request({
+        url: '/anime/series/timeline/',
+        method: 'get'
+    })
+}

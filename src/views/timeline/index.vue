@@ -8,7 +8,15 @@
                     <div class="arrow-left"></div>
                     <div class="tl-weeks">
                         <ul class="tl-head-list">
-                            <div class="tl-head">
+                            <div class="tl-head" v-for="item in items" :key="item.id">
+                                <div class="tl-day">
+                                    <span class="indicator"></span>
+                                    <div class="day-of-week week-2"></div>
+                                    <span class="t-date">{{item.date}}</span>
+                                    <span class="t-week">{{item.work}}</span>
+                                </div>
+                            </div>
+                            <!-- <div class="tl-head">
                                 <div class="tl-day">
                                     <span class="indicator"></span>
                                     <div class="day-of-week week-2"></div>
@@ -23,15 +31,7 @@
                                     <span class="t-date">4-7</span>
                                     <span class="t-week">周二</span>
                                 </div>
-                            </div>
-                            <div class="tl-head">
-                                <div class="tl-day">
-                                    <span class="indicator"></span>
-                                    <div class="day-of-week week-2"></div>
-                                    <span class="t-date">4-7</span>
-                                    <span class="t-week">周二</span>
-                                </div>
-                            </div>
+                            </div> -->
                         </ul>
                     </div>
                     <div class="arrow-right"></div>
@@ -46,7 +46,7 @@
                                 <ul class="season-list">
                                     <li class="season-item" v-for="itemGrandSon in itemSon.data" :key="itemGrandSon.id">
                                         <a href="//www.bilibili.com/bangumi/play/ss32982" target="_blank" :title="itemGrandSon.title">
-                                            <img src="../../assets/comic/suoluetu/093fb58647f38be27f2c0f145e9ed1debc5cb1d3.jpg">
+                                            <img :src="GLOBAL.oss + itemGrandSon.image">
                                         </a>
                                         <div class="season-body">
                                             <a href="//www.bilibili.com/bangumi/play/ss32982" target="_blank" :title="itemGrandSon.title">
@@ -54,7 +54,7 @@
                                                     <span class="follow" v-if="itemGrandSon.isFollow"></span>{{itemGrandSon.title}}
                                                 </div>
                                             </a>
-                                            <a href="//www.bilibili.com/bangumi/play/ep317925" target="_blank"><div class="season-desc published">第{{item.series}}话</div></a>
+                                            <a href="//www.bilibili.com/bangumi/play/ep317925" target="_blank"><div class="season-desc published">第{{itemGrandSon.series}}话</div></a>
                                         </div>
                                     </li>
                                 </ul>
@@ -69,7 +69,18 @@
 <script>
 import bannerContainer from '@/components/common/BannerContainer'
 import navContainer from '@/components/common/NavContainer'
+import * as series from '@/api/animeSeries'
 export default {
+    methods: {
+        init () {
+            series.timeLine().then(result => {
+                this.items = result.data
+            })
+        }
+    },
+    created () {
+        this.init()
+    },
     components: {
         bannerContainer,
         navContainer
