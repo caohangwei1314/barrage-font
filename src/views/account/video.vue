@@ -48,8 +48,8 @@
                 width="120">
                 <template slot-scope="scope">
                     <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-                    <el-button type="text" size="small">编辑</el-button>
-                    <el-button type="text" size="small">删除</el-button>
+                    <el-button @click="goVideUpdate(scope.row)" type="text" size="small">编辑</el-button>
+                    <el-button @click="deleted(scope.row)" type="text" size="small">删除</el-button>
                 </template>
                 </el-table-column>
             </el-table>
@@ -58,13 +58,30 @@
 </template>
 
 <script>
+import * as contribution from '@/api/contribution'
 export default {
+    created () {
+        this.init()
+    },
     methods: {
+        init () {
+            contribution.userList().then(result => {
+                this.tableData = result.data
+            })
+        },
         handleClick (row) {
-            console.log(row)
+            this.$router.push({ path: '/contribution/detail?id=' + row.id + '&video=' + row.videoUrl })
         },
         goVideoEdit () {
-            this.$router.push({ path: '/account/video/edit' })
+            this.$router.push({ path: '/account/video/edit?option=create' })
+        },
+        goVideUpdate (row) {
+            this.$router.push({ path: '/account/video/edit?id=' + row.id + '&option=update' })
+        },
+        deleted (row) {
+            contribution.deleted(row.id).then(result => {
+                this.$router.push({ path: '/account/video' })
+            })
         },
         formatStatus (row, column) {
             switch (row.status) {

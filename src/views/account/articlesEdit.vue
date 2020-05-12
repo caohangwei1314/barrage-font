@@ -110,6 +110,7 @@
 
 <script>
 import Tinymce from '@/components/Tinymce'
+import * as articles from '@/api/articles'
 
 export default {
     name: 'TinymceDemo',
@@ -142,7 +143,10 @@ export default {
         }
     },
     created () {
-        this.init()
+        this.option = this.$router.currentRoute.query.option
+        if (this.option === 'update') {
+            this.init()
+        }
         this.getClass()
     },
     methods: {
@@ -158,6 +162,9 @@ export default {
             this.fileList2.push(files)
         },
         updateData () {
+            articles.update(this.temp).then(result => {
+                this.$router.push({ path: '/account/articles' })
+            })
             // updateProduct(this.temp).then(response => {
             //     if (response.code === 0) {
             //         this.$router.push({ name: 'products' })
@@ -165,6 +172,9 @@ export default {
             // })
         },
         createData () {
+            articles.create(this.temp).then(result => {
+                this.$router.push({ path: '/account/articles' })
+            })
             // createProduct(this.temp).then(response => {
             //     if (response.code === 0) {
             //         this.$router.push({ name: 'products' })
@@ -172,7 +182,10 @@ export default {
             // })
         },
         init () {
-            this.option = this.$router.currentRoute.query.option
+            articles.updateDetail(this.$router.currentRoute.query.id).then(result => {
+                this.temp = result.data
+                this.imageUrl = this.GLOBAL.oss + result.data.image
+            })
             // if (this.option === 'update') {
             //     productDetail(this.$router.currentRoute.query.id).then(response => {
             //         this.temp = response.data
@@ -196,16 +209,7 @@ export default {
             this.image = res.data
         },
         beforeAvatarUpload (file) {
-            const isJPG = file.type === 'image/jpeg'
-            const isLt2M = file.size / 1024 / 1024 < 2
-
-            if (!isJPG) {
-                this.$message.error('上传头像图片只能是 JPG 格式!')
-            }
-            if (!isLt2M) {
-                this.$message.error('上传头像图片大小不能超过 2MB!')
-            }
-            return isJPG && isLt2M
+            return true
         },
         clearImageUrl () {
             this.imageUrl = ''

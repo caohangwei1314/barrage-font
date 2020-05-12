@@ -32,6 +32,16 @@ export default new VueRouter({
             component: () => import('@/views/articles/detail')
         },
         {
+            path: '/contribution',
+            name: 'contribution',
+            component: () => import('@/views/contribution/index')
+        },
+        {
+            path: '/contribution/detail',
+            name: 'contributionDetail',
+            component: () => import('@/views/play/upload')
+        },
+        {
             path: '/account',
             name: 'account',
             component: () => import('@/views/account/index'),

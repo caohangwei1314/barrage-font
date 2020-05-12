@@ -52,10 +52,27 @@
         <el-upload
             class="upload-demo"
             drag
-            action="https://jsonplaceholder.typicode.com/posts/"
+            action="http://localhost:8090/file/upload"
+            :on-success="videoHandleAvatarSuccess"
             multiple>
             <i class="el-icon-upload"></i>
             <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+        </el-upload>
+        <div class="reset-img" v-if="videoUrl !== ''">
+            <label data-v-15325571="" for="file_input" @click="clearVideo()"><i data-v-15325571=""></i>&nbsp;重新选择</label>
+        </div>
+      </el-form-item>
+      <el-form-item
+        label="视频封面"
+      >
+        <el-upload
+            class="avatar-uploader"
+            action="http://localhost:8090/file/upload"
+            :show-file-list="false"
+            :on-success="handleAvatarSuccess"
+            :before-upload="beforeAvatarUpload">
+            <img v-if="imageUrl" :src="imageUrl" class="avatar">
+            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
         </el-upload>
         <div class="reset-img" v-if="imageUrl !== ''">
             <label data-v-15325571="" for="file_input" @click="clearImageUrl()"><i data-v-15325571=""></i>&nbsp;重新选择</label>
@@ -65,7 +82,7 @@
     <div style="margin-left:50px;">
         <el-button
         type="primary" class="center"
-        @click="option==='create'?createData():updateData()"
+        @click="option === 'create' ? insert() : update()"
         >
         提交
         </el-button>
@@ -76,7 +93,7 @@
 </template>
 
 <script>
-
+import * as contribution from '@/api/contribution'
 export default {
     name: 'TinymceDemo',
     data () {
@@ -91,23 +108,19 @@ export default {
                 description: '',
                 title: '',
                 detailId: '',
-                content:
-          `<h1 style="text-align: center;">Welcome to the TinyMCE demo!</h1><p style="text-align: center; font-size: 15px;"><img title="TinyMCE Logo" src="//www.tinymce.com/images/glyph-tinymce@2x.png" alt="TinyMCE Logo" width="110" height="97" /><ul>
-        <li>Our <a href="//www.tinymce.com/docs/">documentation</a> is a great resource for learning how to configure TinyMCE.</li><li>Have a specific question? Visit the <a href="https://community.tinymce.com/forum/">Community Forum</a>.</li><li>We also offer enterprise grade support as part of <a href="https://tinymce.com/pricing">TinyMCE premium subscriptions</a>.</li>
-      </ul>`
+                videoUrl: ''
             },
-            fileList: [
-                {
-                    url: '',
-                    name: ''
-                }
-            ],
             fileList2: [],
-            imageUrl: ''
+            imageUrl: '',
+            videoUrl: '',
+            video: ''
         }
     },
     created () {
-        this.init()
+        this.option = this.$router.currentRoute.query.option
+        if (this.option === 'update') {
+            this.init()
+        }
         this.getClass()
     },
     methods: {
@@ -137,16 +150,12 @@ export default {
             // })
         },
         init () {
-            this.option = this.$router.currentRoute.query.option
-            // if (this.option === 'update') {
-            //     productDetail(this.$router.currentRoute.query.id).then(response => {
-            //         this.temp = response.data
-            //         this.fileList[0].url = 'https://hzrtb.oss-cn-hangzhou.aliyuncs.com/' + response.data.image
-            //         this.fileList[0].name = '封面'
-            //     })
-            // } else {
-            //     this.fileList = []
-            // }
+            contribution.detail(this.$router.currentRoute.query.id).then(result => {
+                this.temp = result.data
+                this.video = result.data.videoUrl
+                this.videoUrl = result.data.videoUrl
+                this.imageUrl = this.GLOBAL.oss + result.data.image
+            })
         },
         getClass () {
             // fetchProductsClassList().then(response => {
@@ -158,22 +167,30 @@ export default {
         },
         handleAvatarSuccess (res, file) {
             this.imageUrl = this.GLOBAL.oss + res.data
-            this.image = res.data
+            this.temp.image = res.data
+        },
+        videoHandleAvatarSuccess (res, file) {
+            this.video = this.GLOBAL.oss + res.data
+            this.temp.videoUrl = res.data
         },
         beforeAvatarUpload (file) {
-            const isJPG = file.type === 'image/jpeg'
-            const isLt2M = file.size / 1024 / 1024 < 2
-
-            if (!isJPG) {
-                this.$message.error('上传头像图片只能是 JPG 格式!')
-            }
-            if (!isLt2M) {
-                this.$message.error('上传头像图片大小不能超过 2MB!')
-            }
-            return isJPG && isLt2M
+            return true
         },
         clearImageUrl () {
             this.imageUrl = ''
+        },
+        clearVideo () {
+            this.video = ''
+        },
+        insert () {
+            contribution.create(this.temp).then(result => {
+                this.$router.push({ path: '/account/video' })
+            })
+        },
+        update () {
+            contribution.update(this.temp).then(result => {
+                this.$router.push({ path: '/account/video' })
+            })
         }
     }
 }

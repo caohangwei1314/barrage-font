@@ -45,8 +45,8 @@
                 width="120">
                 <template slot-scope="scope">
                     <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-                    <el-button type="text" size="small">编辑</el-button>
-                    <el-button type="text" size="small">删除</el-button>
+                    <el-button @click="handleUpdate(scope.row)" type="text" size="small">编辑</el-button>
+                    <el-button @click="deleted(scope.row)" type="text" size="small">删除</el-button>
                 </template>
                 </el-table-column>
             </el-table>
@@ -55,13 +55,30 @@
 </template>
 
 <script>
+import * as articles from '@/api/articles'
 export default {
+    created () {
+        this.init()
+    },
     methods: {
+        init () {
+            articles.userArticles().then(result => {
+                this.tableData = result.data
+            })
+        },
         handleClick (row) {
-            console.log(row)
+            this.$router.push({ path: '/articles/detail?id=' + row.id })
+        },
+        handleUpdate (row) {
+            this.$router.push({ path: '/account/articles/edit?option=update&id=' + row.id })
         },
         editArticles () {
-            this.$router.push({ path: '/account/articles/edit' })
+            this.$router.push({ path: '/account/articles/edit?option=create' })
+        },
+        deleted (row) {
+            articles.deleted(row.id).then(result => {
+                this.$router.go(0)
+            })
         },
         formatStatus (row, column) {
             switch (row.status) {

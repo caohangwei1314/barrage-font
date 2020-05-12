@@ -64,6 +64,9 @@ export default {
             case 3:
                 this.$router.push({ name: 'articles' })
                 break
+            case 4:
+                this.$router.push({ name: 'contribution' })
+                break
             default:
                 break
             }
