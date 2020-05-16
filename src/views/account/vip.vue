@@ -48,7 +48,7 @@
     </a>
     </div>
     <div id="accountPgcAnime" class="member-list-flex-warp report-wrap-module">
-        <a href="https://www.bilibili.com/bangumi/play/ss32963" target="_blank" class="member-list-item" v-for="anime in animes" :key="anime.id">
+        <a :href="'/anime?id=' + anime.id" target="_blank" class="member-list-item" v-for="anime in animes" :key="anime.id">
             <span class="member-list-img">
                 <img width="142" height="190" :src="anime.image" lazy="loaded">
                 <span class="member-list-video-num text-nowrap">{{anime.totalFollow}}人追番</span>

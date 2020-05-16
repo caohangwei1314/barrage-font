@@ -57,3 +57,17 @@ export function deleted (id) {
         method: 'delete'
     })
 }
+
+export function like (id) {
+    return request({
+        url: '/articles/like/' + id,
+        method: 'get'
+    })
+}
+
+export function coin (id) {
+    return request({
+        url: '/user/articles/coin/' + id,
+        method: 'get'
+    })
+}

@@ -59,3 +59,17 @@ export function userFollow (limit, size) {
         method: 'get'
     })
 }
+
+export function isFollow (id) {
+    return request({
+        url: '/user/follow/' + id,
+        method: 'get'
+    })
+}
+
+export function follow (id) {
+    return request({
+        url: '/user/follow/' + id,
+        method: 'post'
+    })
+}

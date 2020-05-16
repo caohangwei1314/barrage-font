@@ -5,10 +5,10 @@
         <div class="wp">
             <div class="filter-body">
                 <ul class="sort-banner clearfix">
-                    <li class="sort-item on"><i class="up"></i><span>追番人数</span><i class="down active"></i></li>
-                    <li class="sort-item"><i class="up"></i><span>更新时间</span><i class="down active"></i></li>
-                    <li class="sort-item lock-desc"><i class="up"></i><span>最高评分</span><i class="down active"></i></li>
-                    <li class="sort-item"><i class="up"></i><span>播放数量</span><i class="down active"></i></li><li class="sort-item"><i class="up"></i><span>开播时间</span><i class="down active"></i></li>
+                    <li class="sort-item on" @click="changeParam('total_follow')"><i class="up"></i><span>追番人数</span><i class="down active"></i></li>
+                    <li class="sort-item" @click="changeParam('update_time')"><i class="up"></i><span>更新时间</span><i class="down active"></i></li>
+                    <li class="sort-item lock-desc" @click="changeParam('score')"><i class="up"></i><span>最高评分</span><i class="down active"></i></li>
+                    <li class="sort-item" @click="changeParam('total_play')"><i class="up"></i><span>播放数量</span><i class="down active"></i></li><li class="sort-item" @click="changeParam('upper_self_time')"><i class="up"></i><span>开播时间</span><i class="down active"></i></li>
                 </ul>
                 <ul class="bangumi-list clearfix">
                     <li v-for="item in items" :key="item.id" class="bangumi-item" style="">
@@ -19,7 +19,7 @@
                             <div class="shadow">{{item.totalFollow}}追番</div>
                             <span v-if="item.isVip" class="corner-tag badge_0">会员专享</span>
                         </a>
-                        <a href="//www.bilibili.com/bangumi/play/ss26801/" target="_blank" class="bangumi-title">{{item.name}}</a>
+                        <a href="#" target="_blank" class="bangumi-title">{{item.name}}</a>
                         <p class="pub-info">全{{item.count}}话</p>
                     </li>
                 </ul>
@@ -28,7 +28,10 @@
                     layout="prev, pager, next"
                     :total="page.total"
                     :page-size="page.size"
-                    :current-page="page.limit">
+                    :current-page="page.limit"
+                    @size-change="handleSizeChange"
+                    @current-change="handleCurrentChange"
+                    >
                 </el-pagination>
             </div>
         </div>
@@ -65,6 +68,15 @@ export default {
         this.init()
     },
     methods: {
+        changeParam (orderDesc) {
+            if (this.page.orderDesc === 'desc') {
+                this.page.orderDesc = 'asc'
+            } else {
+                this.page.orderDesc = 'desc'
+            }
+            this.orderColumn = orderDesc
+            this.init()
+        },
         init () {
             anime.page(this.page.limit, this.page.size, this.page.orderColumn, this.page.orderDesc).then(result => {
                 if (result.code === 0) {
@@ -74,6 +86,14 @@ export default {
                     this.page.total = result.data.total
                 }
             })
+        },
+        handleSizeChange (val) {
+            this.page.size = val
+            this.init()
+        },
+        handleCurrentChange (val) {
+            this.page.limit = val
+            this.init()
         }
     },
     components: {

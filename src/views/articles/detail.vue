@@ -31,13 +31,13 @@
               <div>
                 <div class="fl" style="margin-right:20px;">
                   <div>
-                    <el-button type="success" icon="el-icon-thumb" circle></el-button>
+                    <el-button type="success" icon="el-icon-thumb" circle @click="like"></el-button>
                   </div>
                   <div style="text-align:center">点赞</div>
                 </div>
                 <div class="fl">
                   <div>
-                    <el-button type="primary" icon="el-icon-coin" circle></el-button>
+                    <el-button type="primary" icon="el-icon-coin" circle @click="coin"></el-button>
                   </div>
                   <div style="text-align:center">投币</div>
                 </div>
@@ -107,6 +107,44 @@ export default {
         init () {
             articles.detail(this.$router.currentRoute.query.id).then((result) => {
                 this.data = result.data
+            })
+        },
+        like (id) {
+            articles.like(this.$router.currentRoute.query.id).then(result => {
+                if (result.code === 0) {
+                    this.$message({
+                        type: 'success',
+                        message: '点赞成功!'
+                    })
+                    this.ALTER_DEFAULT_SWITCH_ON(1)
+                    this.$router.push({ path: '/account/vip' })
+                } else {
+                    this.$message({
+                        type: 'error',
+                        message: '点赞失败!'
+                    })
+                    this.ALTER_DEFAULT_SWITCH_ON(1)
+                    this.$router.push({ path: '/login' })
+                }
+            })
+        },
+        coin (id) {
+            articles.coin(this.$router.currentRoute.query.id).then(result => {
+                if (result.code === 0) {
+                    this.$message({
+                        type: 'success',
+                        message: '投币成功!'
+                    })
+                    this.ALTER_DEFAULT_SWITCH_ON(1)
+                    this.$router.push({ path: '/account/vip' })
+                } else {
+                    this.$message({
+                        type: 'error',
+                        message: '投币失败，请登录!'
+                    })
+                    this.ALTER_DEFAULT_SWITCH_ON(1)
+                    this.$router.push({ path: '/login' })
+                }
             })
         }
     }

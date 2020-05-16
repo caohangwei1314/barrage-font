@@ -8,7 +8,7 @@
       <div class="left">
         <div class="headline clearfix">
           <h3>最近更新</h3>
-          <a href="//www.bilibili.com/anime/timeline" target="_blank" class="timeline-more">
+          <a href="/timeline"  class="timeline-more">
             新番时间表
             <i class="b-icon b-icon-arrow-red-r" /></a>
         </div>
@@ -33,7 +33,7 @@
       <div class="right">
         <div>
           <h3>我的追番</h3>
-          <a href="//space.bilibili.com/13124563/bangumi" target="_blank" class="follow-more">更多<i class="icon" /></a>
+          <a href="#" target="_blank" class="follow-more">更多<i class="icon" /></a>
         </div>
 
         <div class="follow-list reduce">

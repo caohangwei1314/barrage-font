@@ -82,8 +82,11 @@
                                         <div class="pic-wrapper"></div>
                                     </div>
                                     <div class="bangumi-btn">
-                                        <div class="btn-follow followed">
+                                        <div v-if="isFollow" class="btn-follow followed">
                                             <i></i>已追番
+                                        </div>
+                                        <div v-if="!isFollow" class="btn-follow followed" @click="follow">
+                                            <i></i>追番
                                         </div>
                                         <div class="bangumi-options clearfix">
                                             <ul class="opt-list">
@@ -204,14 +207,14 @@
                                                     <ul class="block-slide-img-list clearfix" style="transform: translateX(0px);">
                                                         <li class="slide-item-wrp" v-for="item in animes" :key="item.id">
                                                             <div class="slide-item-img">
-                                                                <a href="//www.bilibili.com/bangumi/play/ss25510" target="_blank"><!---->
+                                                                <a :href="'/anime?id=' + item.id" target="_blank"><!---->
                                                                     <div class="common-lazy-img">
                                                                         <img alt="" :src="GLOBAL.oss + item.image" lazy="loaded">
                                                                     </div>
                                                                 </a>
                                                             </div>
                                                             <div class="slide-item-info">
-                                                                <a href="//www.bilibili.com/bangumi/play/ss25510" target="_blank">
+                                                                <a :href="'/anime?id=' + item.id" target="_blank">
                                                                     <div class="slide-item-title">{{item.name}}</div>
                                                                 </a>
                                                             </div>
@@ -292,6 +295,7 @@
 import * as anime from '@/api/anime'
 import * as animeSeries from '@/api/animeSeries'
 import * as articles from '@/api/articles'
+import * as user from '@/api/user'
 export default {
     data () {
         return {
@@ -305,7 +309,8 @@ export default {
                 current: 1
             },
             animes: [],
-            evaluate: []
+            evaluate: [],
+            isFollow: false
         }
     },
     created () {
@@ -325,6 +330,28 @@ export default {
             })
             anime.page(1, 4, 'update_time', 'desc').then(result => {
                 this.animes = result.data.records
+            })
+            user.isFollow(this.animeId).then(result => {
+                this.isFollow = result.data
+            })
+        },
+        follow () {
+            user.follow(this.animeId).then(result => {
+                if (result.code === 0) {
+                    this.isFollow = true
+                    this.$message({
+                        type: 'success',
+                        message: '追番成功'
+                    })
+                    setTimeout(() => {
+                        this.$router.go(0)
+                    }, 1000)
+                } else {
+                    this.$message({
+                        type: 'error',
+                        message: '追番失败'
+                    })
+                }
             })
         }
     }
